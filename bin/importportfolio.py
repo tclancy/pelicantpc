@@ -14,6 +14,7 @@ Tags: %(tags)s
 Category: Portfolio
 Date: %(date)s
 Author: Tom Clancy
+Url: %(slug)s
 
 # %(title)s
 

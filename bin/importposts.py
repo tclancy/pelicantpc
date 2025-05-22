@@ -13,7 +13,7 @@ PAGE_TEMPLATE = """Title: %(title)s
 Slug: %(slug)s
 Date: %(date)s
 Tags: %(tags)s
-Category: Post
+Category: Posts
 Author: Tom Clancy
 
 # %(title)s

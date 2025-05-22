@@ -2,6 +2,8 @@
 
 ## TODO
 
+- No links for portfolio pages right now?
+- Static assets don't show up due to absolute pathing
 - Look at history of other project to see edits to posts for static assets (after everything is set)
 - Add [static pages](https://docs.getpelican.com/en/latest/content.html#pages) as needed
 - Set repo to GitHub pages and install action
