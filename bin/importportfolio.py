@@ -68,7 +68,7 @@ def get_images(job_id: int) -> str:
                    (job_id,))
     output = ""
     for (name, description, screenshot) in cursor:
-        img_url = screenshot.replace("img/", "/images/")
+        img_url = screenshot.replace("img/", "images/")
         description = description.replace('"', "'")
         output += f'<img src="{img_url}" alt="{name} {description}" style="margin: 1em 0" />\n'
     cursor.close()
