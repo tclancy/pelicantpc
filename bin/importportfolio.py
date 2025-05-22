@@ -8,11 +8,10 @@ import mysql.connector
 
 logger = logging.getLogger(__name__)
 
-PAGE_TEMPLATE = """
-Title: "%(title)s"
-Slug: "%(slug)s"
+PAGE_TEMPLATE = """Title: %(title)s
+Slug: %(slug)s
 Tags: %(tags)s
-Category: portfolio
+Category: Portfolio
 Date: %(date)s
 Author: Tom Clancy
 
@@ -43,7 +42,7 @@ ORDER BY j.date_completed;""")
         print_summary = ""
         if summary:
             print_summary = f"_{summary}_"
-        filename = f"content/{slug}.md"
+        filename = f"content/portfolio/{slug}.md"
         description += get_images(job_id)
         with open(filename, "w") as f:
             f.write(PAGE_TEMPLATE % {

@@ -2,12 +2,10 @@
 
 ## TODO
 
-- Update importer templates for Pelican
-- Figure out collections or similar concept
+- Look at history of other project to see edits to posts for static assets (after everything is set)
 - Add [static pages](https://docs.getpelican.com/en/latest/content.html#pages) as needed
 - Set repo to GitHub pages and install action
 - Figure out URL this will live at when done
-- Bring over static assets
 
 ### Bonus Points
 

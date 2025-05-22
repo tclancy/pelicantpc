@@ -9,12 +9,11 @@ import mysql.connector
 
 logger = logging.getLogger(__name__)
 
-PAGE_TEMPLATE = """
-Title: %(title)s
+PAGE_TEMPLATE = """Title: %(title)s
 Slug: %(slug)s
 Date: %(date)s
 Tags: %(tags)s
-Category: blog
+Category: Post
 Author: Tom Clancy
 
 # %(title)s
@@ -46,7 +45,7 @@ def get_posts():
     cursor = conn.cursor()
     cursor.execute("SELECT name, slug, content, publish_date, tags, type_id FROM thoughts_post WHERE active = 1")
     for (name, slug, content, publish_date, tags, type_id) in cursor:
-        filename = f"content/{publish_date.strftime('%Y-%m-%d')}-{slug}.md"
+        filename = f"content/posts/{publish_date.strftime('%Y-%m-%d')}-{slug}.md"
         with open(filename, "w") as f:
             f.write(PAGE_TEMPLATE % {
                 "title": sanitize_title(name),
