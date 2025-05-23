@@ -3,13 +3,11 @@
 ## TODO
 
 - Absolute urls may not work until you have a domain or put a temporary shim in
+  - cannot use relative everywhere because of tag/ summary pages
 - Fix domain redirection for tomclancy.info
   - [Namecheap](https://www.namecheap.com/support/knowledgebase/article.aspx/9645/2208/how-do-i-link-my-domain-to-github-pages/)
   - [GitHub](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
-- Look at history of other project to see edits to posts for static assets (after everything is set)
 - Some static assets don't show up due to absolute pathing
-  - Wordpress links? search for http://tkc.webfactional.com/blog/wp-content/uploads/ and /wp-content/uploads/
-  - find and replace on to /legacy may be a trick (http://localhost:8000/dear-josie-weasel-words.html)
   - https://tclancy.github.io/pelicantpc/nexus-and-the-library.html, https://tclancy.github.io/pelicantpc/album-cover-roobarb.html, etc
 - Fix theme paging links or change theme (workflow setting update!)
 - Add home and other [static pages](https://docs.getpelican.com/en/latest/content.html#pages) as needed

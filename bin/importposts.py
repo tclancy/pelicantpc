@@ -65,6 +65,9 @@ def get_posts():
     cursor = conn.cursor()
     cursor.execute("SELECT name, slug, content, publish_date, tags, type_id FROM thoughts_post WHERE active = 1")
     for (name, slug, content, publish_date, tags, type_id) in cursor:
+        if not content:
+            print(f"Skipping {name} for no content")
+            continue
         filename = f"content/posts/{publish_date.strftime('%Y-%m-%d')}-{slug}.md"
         with open(filename, "w") as f:
             f.write(PAGE_TEMPLATE % {
