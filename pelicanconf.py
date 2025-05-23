@@ -1,12 +1,13 @@
-AUTHOR = 'Tom Clancy'
-SITENAME = 'Tom Clancy'
+AUTHOR = "Tom Clancy"
+SITENAME = "Tom Clancy"
 SITEURL = ""
 
 PATH = "content"
 
-TIMEZONE = 'America/New_York'
+TIMEZONE = "America/New_York"
 
-DEFAULT_LANG = 'en'
+DEFAULT_LANG = "en"
+TYPOGRIFY = True
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -15,7 +16,7 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-# Blogroll
+# Blog roll
 LINKS = (
     ("Pelican", "https://getpelican.com/"),
 )

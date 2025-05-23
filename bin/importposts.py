@@ -22,7 +22,18 @@ Author: Tom Clancy
 """
 
 def sanitize_title(title: str) -> str:
-    return title.replace('"', r'\"')
+    """
+    Not sure if I need to escape or not. Without escaping, pelican content shows
+    
+    smartypants.py:271: SyntaxWarning: invalid escape sequence '\S'
+    if re.match("\S", prev_token_last_char):
+    smartypants.py:277: SyntaxWarning: invalid escape sequence '\S'
+    if re.match("\S", prev_token_last_char):
+
+    but does not die as best I can tell.
+    """
+    return title
+    # return title.replace('"', r'\"')
 
 def sanitize_content(content: str) -> str:
     """
@@ -33,6 +44,15 @@ def sanitize_content(content: str) -> str:
     :return:
     """
     content = re.sub(r"{%\s+(\w+)\s+%}", r"\1", content)
+    return content
+
+def repath_images(content: str) -> str:
+    """
+    Change some paths to pelican-friendly ones
+    """
+    # literally one post
+    content = content.replace("/static/thoughts", "/images/legacy")
+    content = content.replace("http://tkc.webfactional.com/blog/wp-content/uploads", "/images/wordpress")
     return content
 
 def get_posts():
@@ -49,7 +69,7 @@ def get_posts():
         with open(filename, "w") as f:
             f.write(PAGE_TEMPLATE % {
                 "title": sanitize_title(name),
-                "content": sanitize_content(content),
+                "content": sanitize_content(repath_images(content)),
                 "tags": ",".join(tags.split()),
                 "date": publish_date,
                 "slug": slug,

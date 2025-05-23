@@ -2,9 +2,8 @@
 
 ## TODO
 
-- Remove escaped quotes, e.g., http://localhost:8000/rich-get-richer-play-one-act.html
 - Absolute urls may not work until you have a domain or put a temporary shim in
-- Fix domain redirection
+- Fix domain redirection for tomclancy.info
   - [Namecheap](https://www.namecheap.com/support/knowledgebase/article.aspx/9645/2208/how-do-i-link-my-domain-to-github-pages/)
   - [GitHub](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
 - Look at history of other project to see edits to posts for static assets (after everything is set)
@@ -14,7 +13,6 @@
   - https://tclancy.github.io/pelicantpc/nexus-and-the-library.html, https://tclancy.github.io/pelicantpc/album-cover-roobarb.html, etc
 - Fix theme paging links or change theme (workflow setting update!)
 - Add home and other [static pages](https://docs.getpelican.com/en/latest/content.html#pages) as needed
-- Figure out URL this will live at when done
 - Footer links, imagery
 
 ### Bonus Points
