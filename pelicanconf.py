@@ -18,7 +18,6 @@ AUTHOR_FEED_RSS = None
 
 # Blog roll
 LINKS = (
-    ("Pelican", "https://getpelican.com/"),
 )
 
 # Social widget
