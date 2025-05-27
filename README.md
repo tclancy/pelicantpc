@@ -1,16 +1,18 @@
 # TPC Portfolio and Blog Relaunch
 
-## TODO
-
-- Fix theme paging links or change theme (workflow setting update!)
-- Add home and other [static pages](https://docs.getpelican.com/en/latest/content.html#pages) as needed
-  - Add imagery
-
 ### Bonus Points
 
 - oEmbed support in importers: https://micawber.readthedocs.io/en/latest/index.html
-- Search? There's a js plugin, do I really care?
 - Add a tag to any post starting with "Twitter Updates" or just put a "hide" status on them
+
+## Portfolio
+
+- Do it in sync with A-Team portfolio rebuild
+- Automatically add media from Django if possible, remove things like `thumb:1`
+
+## Improve Blog Posts
+
+- Media consumed posts: podcasts, books, etc
 
 ## Links
 
