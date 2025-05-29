@@ -3,7 +3,7 @@ Slug: about
 Date: 2025-05-27 11:12:38
 Tags: 
 Category: Pages
-Author: About
+Author: Tom Clancy
 
 # Tom Clancy
 

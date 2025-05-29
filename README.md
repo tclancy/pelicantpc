@@ -3,7 +3,10 @@
 ### Bonus Points
 
 - oEmbed support in importers: https://micawber.readthedocs.io/en/latest/index.html
+  - Remember to swap //:twitter.com to //:x.com 
+  - Add requirement to hook
 - Add a tag to any post starting with "Twitter Updates" or just put a "hide" status on them
+- Music blogging for favorites -- create a landing page
 
 ## Portfolio
 
