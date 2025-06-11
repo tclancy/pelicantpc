@@ -15,4 +15,4 @@ A resume-like intro for the more bot-minded: Seasoned technology consultant with
 
 # Work Status
 
-Currently employed, but you can find my [resume here](https://tclancy.github.io/assets/tom-clancy-standard-resume-cc.pdf) and me on [LinkedIn.](https://www.linkedin.com/in/tomclancy/)
+Currently (and surprisingly, as my next company folded days in advance of me starting) open to new work, you can find my [resume here](https://tclancy.github.io/assets/tom-clancy-standard-resume-cc.pdf) and me on [LinkedIn.](https://www.linkedin.com/in/tomclancy/)

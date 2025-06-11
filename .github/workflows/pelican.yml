@@ -13,4 +13,4 @@ jobs:
     with:
       # see for options: https://docs.getpelican.com/en/stable/tips.html#publishing-to-github-pages-using-a-custom-github-actions-workflow
       settings: "publishconf.py"
-      requirements: "pelican[markdown] typogrify"
+      requirements: "pelican[markdown] typogrify micawber"

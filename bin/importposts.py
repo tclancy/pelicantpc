@@ -55,6 +55,21 @@ def repath_images(content: str) -> str:
     content = content.replace("http://tkc.webfactional.com/blog/wp-content/uploads", "/images/wordpress")
     return content
 
+def make_oembeds(content: str) -> str:
+    """
+    Use https://micawber.readthedocs.io/en/latest/index.html to try to embed actual media in posts
+    Do we need to swap ://twitter.com to ://x.com first?
+
+    response from extract may be what we want, use dict keys to replace url with "html"
+    first item in response is a list
+    >>> providers.extract("https://twitter.com/AndrewBerkshire/status/344972991404310528")
+    (['https://twitter.com/AndrewBerkshire/status/344972991404310528'],
+    {'https://twitter.com/AndrewBerkshire/status/344972991404310528':
+    {'url': 'https://twitter.com/AndrewBerkshire/status/344972991404310528', 'author_name': 'Berkshire.bsky.social', 'author_url': 'https://twitter.com/AndrewBerkshire', 'html': '<blockquote class="twitter-tweet"><p lang="en" dir="ltr">The gap between Chicago&#39;s anthem singer and Rene Rancourt is damn hilarious. Best vs worst.</p>&mdash; Berkshire.bsky.social (@AndrewBerkshire) <a href="https://twitter.com/AndrewBerkshire/status/344972991404310528?ref_src=twsrc%5Etfw">June 13, 2013</a></blockquote>\n<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>\n\n', 'width': 550, 'height': None, 'type': 'rich', 'cache_age': '3153600000', 'provider_name': 'Twitter', 'provider_url': 'https://twitter.com', 'version': '1.0', 'title': 'https://twitter.com/AndrewBerkshire/status/344972991404310528'}})
+    """
+    content = content.replace("://twitter.com/", "://x.com/")
+    return content
+
 def get_posts():
     try:
         conn = mysql.connector.connect(user=os.environ["MYSQL_USER"], password=os.environ["MYSQL_PASS"],
@@ -72,7 +87,11 @@ def get_posts():
         with open(filename, "w") as f:
             f.write(PAGE_TEMPLATE % {
                 "title": sanitize_title(name),
-                "content": sanitize_content(repath_images(content)),
+                "content": make_oembeds(
+                    sanitize_content(
+                        repath_images(content)
+                    )
+                ),
                 "tags": ",".join(tags.split()),
                 "date": publish_date,
                 "slug": slug,
