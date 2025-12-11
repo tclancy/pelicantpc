@@ -1,8 +1,14 @@
 # TPC Portfolio and Blog Relaunch
 
+Static blogging using the Python `pelican` static site generator under the hood.
+Markdown files under `/content/posts` and `/content/pages` are converted to HTML
+by Pelican as part of a Github Action.
+
+Local development settings are in `pelicanconf.py` while the live settings are in `publishconf.py`.
+
 ## TODO
 
-- [ ] Add linter and pre-commit hooks
+- [ ] Markdown linter for consistency between writing environments?
 
 ### Bonus Points
 

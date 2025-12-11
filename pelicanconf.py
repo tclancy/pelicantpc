@@ -1,6 +1,6 @@
 AUTHOR = "Tom Clancy"
 SITENAME = "Tom Clancy"
-SITEURL = ""
+SITEURL = "https://tomclancy.info"
 
 PATH = "content"
 
@@ -11,6 +11,9 @@ TYPOGRIFY = True
 
 # fix paging navigation per - [Override templates](https://stackoverflow.com/a/61647660/7376)
 THEME_TEMPLATES_OVERRIDES = ["themes/overrides"]
+
+# Plugins
+PLUGINS = ['plugins.oembed']
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
