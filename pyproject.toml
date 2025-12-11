@@ -9,5 +9,7 @@ dependencies = [
     "micawber>=0.5.6",
     "mysql-connector-python>=9.3.0",
     "pelican[markdown]>=4.11.0",
+    "pre-commit>=4.5.0",
+    "ruff>=0.14.8",
     "typogrify>=2.1.0",
 ]

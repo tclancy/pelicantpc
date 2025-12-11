@@ -1,5 +1,9 @@
 # TPC Portfolio and Blog Relaunch
 
+## TODO
+
+- [ ] Add linter and pre-commit hooks
+
 ### Bonus Points
 
 - oEmbed support in importers: https://micawber.readthedocs.io/en/latest/index.html
