@@ -42,3 +42,5 @@ machine. You can get that with `lpstat -p`. The weird side effect is you wind up
 one with the `.ps` printer extension and one with the `.pdf` extension. Rather than figure out
 why, I am just stomping on it at the same time, which showed me `pathlib` has that neat little
 `with_suffix` method.
+
+UPDATE 02-02-26: You can scale the print job with `-o scaling=X` where `X` is a number between 1 and 800.
