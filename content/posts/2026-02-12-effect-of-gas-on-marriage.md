@@ -10,7 +10,7 @@ Author: Tom Clancy
 I was well into my 30s before I realized my mother's aphorism on relationships,
 "Fits find each other" had a positive meaning. Because my mother and her sister
 both taught in special education and because their side of the family is from the
-school of "If you have nothing nice to say and it's funny, sit with us", I had
+school of "If you have nothing nice to say and it's funny, sit with us", I'd
 assumed it only ever meant kids who couldn't sit still wind up together later in
 life. It was the '80s, "fits" would have been one of the nicer terms that was _au
 courant_ among educators back then.
@@ -25,7 +25,7 @@ this dynamic, it means I often start a car which tells me, `Fuel low, would you
 like to search for a nearby gas station?` The last time it happened, the Hyundai
 and I had seven miles together before things would have ended. I _dread_ running
 out of gas. It's happened maybe twice in a half century and neither time was my
-fault, but it drives me to distraction. I got the Hyuindai to a station a couple
+fault, but it drives me to distraction. I got the Hyundai to a station a couple
 miles away with 0.2 gallons left to my name.
 
 Early on in my work as a developer, I decided, "There are no technological
@@ -69,10 +69,10 @@ _a lot a lot_ and came to appreciate the nature of pluggable backends. Suspectin
 notifications might turn out to be a pain in the ass, plus the fact I did this
 when I rebuilt the notification system at a recent job using Knock, I made the
 notifications pluggable because it's a lot easier to develop with something
-spitting logd to the console immediately than having to wait for a message to maybe
-show up in a dashboard seven levels deep in someone else' site. So the commit
-history of my fork includes a bunch of aborted back-end attempts. I was tempted
-to keep them all for posterity but then I realized how wildly egotistical that
-sounded.
+spitting the notifications as logs in the console immediately than having to
+wait for a message to maybe show up in a dashboard seven levels deep in someone
+else' site. So the commit history of my fork includes a bunch of aborted back-end
+attempts. I was tempted to keep them all for posterity but then I realized how 
+wildly egotistical that sounded.
 
 May you never has gas-related issues in your relationships again.
