@@ -72,7 +72,7 @@ notifications pluggable because it's a lot easier to develop with something
 spitting the notifications as logs in the console immediately than having to
 wait for a message to maybe show up in a dashboard seven levels deep in someone
 else' site. So the commit history of my fork includes a bunch of aborted back-end
-attempts. I was tempted to keep them all for posterity but then I realized how 
+attempts. I was tempted to keep them all for posterity but then I realized how
 wildly egotistical that sounded.
 
 May you never have gas-related issues in your relationships again.

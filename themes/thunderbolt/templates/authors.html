@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Authors &mdash; {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<main class="main-content">
+    <div class="content-grid">
+        <div class="primary-column">
+            <div class="archive-header">
+                <h1 class="archive-title">Authors</h1>
+            </div>
+            <ul class="authors-list">
+                {% for author, articles in authors %}
+                <li>
+                    <a href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
+                    <span class="authors-count">({{ articles | count }} posts)</span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <aside class="sidebar">
+            {% include 'sidebar.html' %}
+        </aside>
+    </div>
+</main>
+{% endblock %}
