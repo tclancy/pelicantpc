@@ -6,6 +6,49 @@ by Pelican as part of a Github Action.
 
 Local development settings are in `pelicanconf.py` while the live settings are in `publishconf.py`.
 
+`publishconf.py` imports everything from `pelicanconf.py` and overrides the production-specific values
+(live `SITEURL`, feeds enabled, `DELETE_OUTPUT_DIRECTORY = True`). You should never need to edit
+`publishconf.py` for local dev.
+
+Deployment consists of committing changes to main and pushing up to GitHub.
+
+## Running Locally
+
+### Quick start (recommended)
+
+```bash
+cd ~/Documents/work/pelicantpc
+
+# Build once and serve on http://localhost:8000
+uv run pelican content -s pelicanconf.py
+python -m http.server 8000 --directory output
+```
+
+### Auto-rebuild on file changes
+
+```bash
+# In one terminal: watch and rebuild on every content/template/CSS change
+uv run pelican --autoreload -s pelicanconf.py
+
+# In another terminal: serve the output
+python -m http.server 8000 --directory output
+```
+
+Or with the Makefile (if `pelican` is on your PATH):
+
+```bash
+make devserver  # starts both watcher + HTTP server together
+```
+
+### Config files explained
+
+| File | Purpose |
+|------|---------|
+| `pelicanconf.py` | Local dev — `SITEURL = "http://localhost:8000"`, feeds off |
+| `publishconf.py` | Production — imports pelicanconf, sets `SITEURL = "https://tomclancy.info"`, feeds on |
+
+The GitHub Action runs `pelican content -s publishconf.py` on push to `main`.
+
 ## TODO
 
 - [ ] Markdown linter for consistency between writing environments?

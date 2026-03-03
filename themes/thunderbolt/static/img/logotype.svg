@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 70" width="420" height="70" role="img" aria-label="Tom Clancy">
+  <defs>
+    <filter id="rough" x="-2%" y="-2%" width="104%" height="104%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" result="noiseOut"/>
+      <feDisplacementMap in="SourceGraphic" in2="noiseOut" scale="1.8" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="shadow" x="-5%" y="-5%" width="115%" height="130%">
+      <feDropShadow dx="2" dy="3" stdDeviation="1.5" flood-color="#3A1200" flood-opacity="0.7"/>
+    </filter>
+    <linearGradient id="metalGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F5C87A"/>
+      <stop offset="35%" stop-color="#E8A040"/>
+      <stop offset="65%" stop-color="#C4601D"/>
+      <stop offset="100%" stop-color="#8B3A10"/>
+    </linearGradient>
+    <linearGradient id="shineGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff" stop-opacity="0.25"/>
+      <stop offset="50%" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <text
+    x="8" y="56"
+    font-family="'Arial Black', 'Impact', 'Franklin Gothic Heavy', sans-serif"
+    font-size="58"
+    font-weight="900"
+    letter-spacing="-1"
+    fill="url(#metalGrad)"
+    filter="url(#shadow)"
+    style="text-transform:uppercase; font-stretch:condensed;"
+  >TOM CLANCY</text>
+  <text
+    x="8" y="56"
+    font-family="'Arial Black', 'Impact', 'Franklin Gothic Heavy', sans-serif"
+    font-size="58"
+    font-weight="900"
+    letter-spacing="-1"
+    fill="url(#shineGrad)"
+    filter="url(#rough)"
+    style="text-transform:uppercase; font-stretch:condensed;"
+  >TOM CLANCY</text>
+  <rect x="8" y="62" width="404" height="3" fill="#C4601D" opacity="0.7" rx="1"/>
+</svg>

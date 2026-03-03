@@ -1,6 +1,6 @@
 AUTHOR = "Tom Clancy"
 SITENAME = "Tom Clancy"
-SITEURL = "https://tomclancy.info"
+SITEURL = "http://localhost:8000"
 
 PATH = "content"
 
