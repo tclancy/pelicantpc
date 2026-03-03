@@ -193,6 +193,7 @@ img { max-width: 100%; height: auto; display: block; }
     margin-bottom: 0.75rem;
     font-family: 'Source Serif 4', Georgia, serif;
 }
+.post-card__summary > h1:first-child { display: none; }
 
 .post-card__footer {
     display: flex;
@@ -284,6 +285,7 @@ img { max-width: 100%; height: auto; display: block; }
     line-height: 1.75;
     color: #2A221A;
 }
+.article-body > h1:first-child { display: none; }
 
 .article-body h1,
 .article-body h2,
@@ -805,6 +807,8 @@ img { max-width: 100%; height: auto; display: block; }
     flex: 1;
     font-family: 'Source Serif 4', Georgia, serif;
 }
+.portfolio-card__summary > h1:first-child,
+.portfolio-card__summary > h2:nth-child(2) { display: none; }
 
 .portfolio-card__link {
     font-size: 0.8rem;
