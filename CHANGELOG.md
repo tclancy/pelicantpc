@@ -1,5 +1,16 @@
 # Changelog
 
+## 2026-03-03
+- Swap header title text → SVG metallic logotype (Interstate '76 inspired lettering with gradient + distress filter)
+- Add Thunderbolt & Lightfoot movie photo as washed-out header background (82% blue overlay, non-distracting)
+- Replace Playfair Display with Zilla Slab across all headings, nav, sidebars, page titles
+- Add burn/char CSS effect to article titles and in-body headings (layered dark warm text-shadow)
+- Portfolio category page: 3-column card grid (responsive: 2-col tablet, 1-col mobile)
+- README: add "Running Locally" section with pelican commands and conf file explanation table
+- Fix `pelicanconf.py` SITEURL → localhost (was accidentally set to production URL)
+- Add thunderbolt movie stills to `assets/thunderbolt/` and `themes/thunderbolt/static/img/`
+- Build: 228 articles, 0 errors
+
 ## 2026-03-02
 - Add `themes/thunderbolt/` — full Pelican theme with '70s Thunderbolt & Lightfoot aesthetic
 - Write `themes/thunderbolt/static/css/thunderbolt.css` (640+ lines) with CSS variables for burnt orange/denim blue/newsprint palette
