@@ -75,4 +75,6 @@ else' site. So the commit history of my fork includes a bunch of aborted back-en
 attempts. I was tempted to keep them all for posterity but then I realized how
 wildly egotistical that sounded.
 
+<img src="/images/posts/gas-marriage.png" alt="Screenshot of this all working!">
+
 May you never have gas-related issues in your relationships again.
