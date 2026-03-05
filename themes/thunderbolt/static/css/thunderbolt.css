@@ -830,6 +830,9 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 /* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 1100px) {
+    .site-logotype { left: 0; }
+}
 @media (max-width: 820px) {
     .content-grid {
         grid-template-columns: 1fr;
@@ -841,7 +844,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 @media (max-width: 520px) {
-    .site-logotype { height: 36px; }
+    .site-logotype { height: 6rem; }
     .article-nav { flex-direction: column; }
     .article-nav__prev,
     .article-nav__next { max-width: 100%; }
