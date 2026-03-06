@@ -7,7 +7,7 @@ Author: Tom Clancy
 
 # What is Good, March 2026
 
-"What is good, Phaedrus, and what is not good?"
+> "What is good, Phaedrus, and what is not good?"
 
 ## Good in the last week
 
