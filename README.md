@@ -49,6 +49,34 @@ make devserver  # starts both watcher + HTTP server together
 
 The GitHub Action runs `pelican content -s publishconf.py` on push to `main`.
 
+## Plugins
+
+All active plugins are listed in `pelicanconf.py` under `PLUGINS`.
+
+| Plugin | Install | Purpose |
+|--------|---------|---------|
+| `plugins.oembed` | local (`plugins/oembed.py`) | Embeds YouTube, Twitter/X, and other oEmbed providers |
+| `pelican.plugins.simple_footnotes` | PyPI `pelican-simple-footnotes` | Footnote syntax: `[^1: text]` renders inline footnotes |
+| `pelican.plugins.deadlinks` | GitHub (no PyPI release) | Detects broken external links; set `DEADLINKS_VALIDATION = True` for full HTTP checks |
+
+### Installing the deadlinks plugin
+
+Because `pelican-deadlinks` has no PyPI release, it must be installed from GitHub:
+
+```bash
+uv add "git+https://github.com/pelican-plugins/deadlinks.git"
+```
+
+### Running a link audit
+
+Enable validation once, build, then disable again to avoid slowing down normal builds:
+
+```bash
+# In pelicanconf.py: set DEADLINKS_VALIDATION = True
+uv run pelican content -s pelicanconf.py 2>&1 | grep -i dead
+# Re-set DEADLINKS_VALIDATION = False when done
+```
+
 ## TODO
 
 - [ ] Markdown linter for consistency between writing environments?

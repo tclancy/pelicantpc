@@ -18,7 +18,11 @@ THEME_TEMPLATES_OVERRIDES = ["themes/overrides"]
 PLUGINS = [
     'plugins.oembed',
     'pelican.plugins.simple_footnotes',
+    'pelican.plugins.deadlinks',
 ]
+
+# deadlinks — check external links during build (DEADLINKS_VALIDATION enables full HTTP checks)
+DEADLINKS_VALIDATION = False  # set to True for periodic link audits; slow on 229 articles
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
