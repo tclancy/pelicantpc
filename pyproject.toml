@@ -8,6 +8,7 @@ dependencies = [
     "beautifulsoup4>=4.13.4",
     "micawber>=0.5.6",
     "mysql-connector-python>=9.3.0",
+    "pelican-simple-footnotes>=1.0.3",
     "pelican[markdown]>=4.11.0",
     "pre-commit>=4.5.0",
     "ruff>=0.14.8",

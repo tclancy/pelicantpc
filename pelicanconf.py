@@ -15,7 +15,10 @@ THEME = "themes/thunderbolt"
 THEME_TEMPLATES_OVERRIDES = ["themes/overrides"]
 
 # Plugins
-PLUGINS = ['plugins.oembed']
+PLUGINS = [
+    'plugins.oembed',
+    'pelican.plugins.simple_footnotes',
+]
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
