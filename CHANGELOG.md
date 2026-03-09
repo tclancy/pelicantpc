@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-03-09
+- Install `pelican-simple-footnotes` plugin (PyPI); activate in PLUGINS (issue #1)
+- Install `pelican-deadlinks` plugin from GitHub (no PyPI release); activate in PLUGINS with `DEADLINKS_VALIDATION = False` default (issue #2)
+- Add Plugins section to README documenting all 3 active plugins with install instructions and link-audit workflow
+- Post clarifying questions to GitHub issue #3 (callouts plugin) before building
+- Branch: `claude/phase4-plugins` (2 commits)
+
 ## 2026-03-03
 - Swap header title text → SVG metallic logotype (Interstate '76 inspired lettering with gradient + distress filter)
 - Add Thunderbolt & Lightfoot movie photo as washed-out header background (82% blue overlay, non-distracting)
