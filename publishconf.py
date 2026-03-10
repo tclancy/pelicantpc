@@ -16,7 +16,12 @@ FEED_ALL_ATOM = "feeds/all.atom.xml"
 CATEGORY_FEED_ATOM = "feeds/{slug}.atom.xml"
 
 # Plugins
-PLUGINS = ['plugins.oembed']
+PLUGINS = [
+    'plugins.oembed',
+    'pelican.plugins.simple_footnotes',
+    'pelican.plugins.deadlinks',
+    'plugins.callouts',
+]
 
 DELETE_OUTPUT_DIRECTORY = True
 
