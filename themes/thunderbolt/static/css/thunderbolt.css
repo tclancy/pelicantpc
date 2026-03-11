@@ -829,6 +829,146 @@ img { max-width: 100%; height: auto; display: block; }
     .portfolio-grid { grid-template-columns: 1fr; }
 }
 
+/* ── Callouts (Obsidian-style) ─────────────────────────────── */
+
+.pelican-callout {
+    position: relative;
+    margin: 1.5rem 0;
+    border-radius: 4px;
+    border-left: 4px solid var(--co-border, #888);
+    background: var(--co-bg, rgba(136, 136, 136, 0.08));
+    overflow: hidden;
+}
+
+.pelican-callout-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.55rem 1rem;
+    font-family: 'Zilla Slab', Georgia, serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.01em;
+    color: var(--co-color, #555);
+    background: var(--co-title-bg, rgba(136, 136, 136, 0.12));
+    user-select: none;
+}
+
+.pelican-callout-icon {
+    flex-shrink: 0;
+    filter: var(--co-icon-filter, brightness(0) opacity(0.6));
+    opacity: 0.9;
+}
+
+.pelican-callout-body {
+    padding: 0.75rem 1rem;
+    color: var(--text);
+}
+
+.pelican-callout-body > *:last-child { margin-bottom: 0; }
+
+/* Foldable */
+.pelican-callout-foldable .pelican-callout-title { cursor: pointer; }
+
+.pelican-callout-foldable .pelican-callout-title::after {
+    content: '▾';
+    margin-left: auto;
+    font-size: 0.85em;
+    opacity: 0.6;
+}
+
+.pelican-callout-collapsed .pelican-callout-title::after { content: '▸'; }
+
+.pelican-callout-collapsed .pelican-callout-body { display: none; }
+
+/* ── Per-type colors (Obsidian palette) ───────────────────── */
+
+/* note / info / todo — blue #448aff */
+.pelican-callout-note,
+.pelican-callout-info,
+.pelican-callout-todo {
+    --co-color:       #448aff;
+    --co-border:      #448aff;
+    --co-bg:          rgba(68, 138, 255, 0.07);
+    --co-title-bg:    rgba(68, 138, 255, 0.12);
+    --co-icon-filter: brightness(0) saturate(100%) invert(47%) sepia(98%)
+                      saturate(1600%) hue-rotate(208deg) brightness(107%);
+}
+
+/* abstract — sky blue #00b0f0 */
+.pelican-callout-abstract {
+    --co-color:       #00a8e0;
+    --co-border:      #00b0f0;
+    --co-bg:          rgba(0, 176, 240, 0.07);
+    --co-title-bg:    rgba(0, 176, 240, 0.12);
+    --co-icon-filter: brightness(0) saturate(100%) invert(56%) sepia(99%)
+                      saturate(2500%) hue-rotate(175deg) brightness(108%);
+}
+
+/* tip / important / question — mint green #00a36c */
+.pelican-callout-tip,
+.pelican-callout-important,
+.pelican-callout-question {
+    --co-color:       #00a36c;
+    --co-border:      #00bf7d;
+    --co-bg:          rgba(0, 163, 108, 0.07);
+    --co-title-bg:    rgba(0, 163, 108, 0.12);
+    --co-icon-filter: brightness(0) saturate(100%) invert(43%) sepia(97%)
+                      saturate(700%) hue-rotate(133deg) brightness(97%);
+}
+
+/* success — green #08b94e */
+.pelican-callout-success {
+    --co-color:       #08b94e;
+    --co-border:      #08b94e;
+    --co-bg:          rgba(8, 185, 78, 0.07);
+    --co-title-bg:    rgba(8, 185, 78, 0.12);
+    --co-icon-filter: brightness(0) saturate(100%) invert(42%) sepia(100%)
+                      saturate(1000%) hue-rotate(128deg) brightness(97%);
+}
+
+/* warning / caution — orange #e9973f */
+.pelican-callout-warning,
+.pelican-callout-caution {
+    --co-color:       #c97d28;
+    --co-border:      #e9973f;
+    --co-bg:          rgba(233, 151, 63, 0.07);
+    --co-title-bg:    rgba(233, 151, 63, 0.12);
+    --co-icon-filter: brightness(0) saturate(100%) invert(60%) sepia(90%)
+                      saturate(1000%) hue-rotate(2deg) brightness(103%);
+}
+
+/* failure / danger / bug — red #e9574b */
+.pelican-callout-failure,
+.pelican-callout-danger,
+.pelican-callout-bug {
+    --co-color:       #c93b2e;
+    --co-border:      #e9574b;
+    --co-bg:          rgba(233, 87, 75, 0.07);
+    --co-title-bg:    rgba(233, 87, 75, 0.12);
+    --co-icon-filter: brightness(0) saturate(100%) invert(35%) sepia(95%)
+                      saturate(1000%) hue-rotate(340deg) brightness(105%);
+}
+
+/* example — purple #7852ee */
+.pelican-callout-example {
+    --co-color:       #7852ee;
+    --co-border:      #7852ee;
+    --co-bg:          rgba(120, 82, 238, 0.07);
+    --co-title-bg:    rgba(120, 82, 238, 0.12);
+    --co-icon-filter: brightness(0) saturate(100%) invert(30%) sepia(100%)
+                      saturate(3000%) hue-rotate(253deg) brightness(103%);
+}
+
+/* quote — gray #9e9e9e */
+.pelican-callout-quote {
+    --co-color:       #767676;
+    --co-border:      #9e9e9e;
+    --co-bg:          rgba(158, 158, 158, 0.07);
+    --co-title-bg:    rgba(158, 158, 158, 0.12);
+    --co-icon-filter: brightness(0) saturate(0%) invert(50%);
+}
+
 /* ── Responsive ───────────────────────────────────────────── */
 @media (max-width: 1100px) {
     .site-logotype { left: 0; }
