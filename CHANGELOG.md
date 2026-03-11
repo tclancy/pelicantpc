@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-03-11
+- Add CSS styling for all 15 Obsidian callout types (issue #4): left border, tinted background, colored title, CSS-filtered icon, foldable arrows via ::after
+- Color palette matches Obsidian defaults: blue (note/info/todo), sky-blue (abstract), mint-green (tip/important/question), green (success), orange (warning/caution), red (failure/danger/bug), purple (example), gray (quote)
+- Branch: `claude/callout-css`
+
 ## 2026-03-09
 - Install `pelican-simple-footnotes` plugin (PyPI); activate in PLUGINS (issue #1)
 - Install `pelican-deadlinks` plugin from GitHub (no PyPI release); activate in PLUGINS with `DEADLINKS_VALIDATION = False` default (issue #2)
