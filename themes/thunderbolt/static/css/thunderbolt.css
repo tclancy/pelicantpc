@@ -854,7 +854,7 @@ img { max-width: 100%; height: auto; display: block; }
     user-select: none;
 }
 
-.pelican-callout-icon {
+.article-body .pelican-callout-icon {
     flex-shrink: 0;
     filter: var(--co-icon-filter, brightness(0) opacity(0.6));
     opacity: 0.9;
