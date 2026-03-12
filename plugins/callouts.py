@@ -173,8 +173,8 @@ def _process_html(html: str) -> tuple[str, bool]:
     """
     # Match <blockquote>…</blockquote> blocks that contain a callout header
     bq_re = re.compile(
-        r"<blockquote>\s*<p>\[!(?P<type>[a-z]+)\](?P<fold>[+-]?)\s*(?P<title>[^<\n]*?)"
-        r"(?:<br\s*/?>)?(?P<body>.*?)</p>(?P<rest>.*?)</blockquote>",
+        r"<blockquote>\s*<p>\[!(?P<type>[a-z]+)\](?P<fold>[+-]?)[^\S\n]*(?P<title>[^<\n]*)"
+        r"(?:<br\s*/?>|\n)?(?P<body>.*?)</p>(?P<rest>.*?)</blockquote>",
         re.IGNORECASE | re.DOTALL,
     )
 

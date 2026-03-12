@@ -89,6 +89,54 @@ def test_process_html_warning_with_custom_title():
     assert "Watch Out!" in processed
 
 
+def test_process_html_custom_title_in_title_div_not_body():
+    """Custom title must appear in the title div, not bleed into the body."""
+    raw = _bq("[!info] My Custom Title\nBody text here.")
+    processed, _ = _process_html(raw)
+    title_pos = processed.index("pelican-callout-title")
+    body_pos = processed.index("pelican-callout-body")
+    custom_pos = processed.index("My Custom Title")
+    assert title_pos < custom_pos < body_pos, (
+        "Custom title should be inside title div, not body div"
+    )
+    assert "Body text here." in processed
+
+
+def test_process_html_custom_title_body_is_separate():
+    """Body content must not contain the custom title text."""
+    raw = _bq("[!warning] Watch Out!\nBe careful.")
+    processed, _ = _process_html(raw)
+    body_start = processed.index("pelican-callout-body")
+    body_section = processed[body_start:]
+    assert "Watch Out!" not in body_section, (
+        "Custom title must not appear in body div"
+    )
+    assert "Be careful." in body_section
+
+
+def test_process_html_foldable_with_custom_title():
+    """Custom titles must work on foldable callouts too."""
+    raw = _bq("[!tip]+ Expand Me\nTip body.")
+    processed, had_foldable = _process_html(raw)
+    assert "pelican-callout-foldable" in processed
+    assert had_foldable is True
+    title_pos = processed.index("pelican-callout-title")
+    body_pos = processed.index("pelican-callout-body")
+    custom_pos = processed.index("Expand Me")
+    assert title_pos < custom_pos < body_pos
+
+
+def test_process_html_no_custom_title_uses_default():
+    """When no custom title is given, the default type name is shown."""
+    raw = _bq("[!info]\nBody text.")
+    processed, _ = _process_html(raw)
+    # Default title for "info" is "Info"
+    title_pos = processed.index("pelican-callout-title")
+    body_pos = processed.index("pelican-callout-body")
+    info_pos = processed.index("Info")
+    assert title_pos < info_pos < body_pos
+
+
 def test_process_html_foldable_expanded():
     raw = _bq("[!tip]+\nExpanded tip.")
     processed, had_foldable = _process_html(raw)
