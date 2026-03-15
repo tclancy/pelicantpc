@@ -9,7 +9,7 @@ Author: Tom Clancy
 
 I have been thinking a lot lately about these two fellows.
 
-<img src="content/images/posts/harold-george.jpeg" alt="Two mischievous boys Harold and George from the Captain Underpants series, standing side by side in a vibrant comic book style school hallway, grinning playfully with arms crossed." />
+<img src="/images/posts/harold-george.jpeg" alt="Two mischievous boys Harold and George from the Captain Underpants series, standing side by side in a vibrant comic book style school hallway, grinning playfully with arms crossed." />
 
 If you are not lucky enough to know them already, those are Harold and George
 from the _Captain Underpants_ series of books (among others). Two supposedly
