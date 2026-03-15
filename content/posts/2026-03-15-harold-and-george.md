@@ -1,7 +1,7 @@
 Title: Harold and George Destroy the World!
 Slug: harold-and-george
 Date: 2026-03-15
-Tags: politics movies art
+Tags: politics,movies,art
 Category: Posts
 Author: Tom Clancy
 

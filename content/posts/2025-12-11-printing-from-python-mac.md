@@ -1,7 +1,7 @@
 Title: Printing from Python on a Mac
 Slug: printing-from-python-mac
 Date: 2025-12-11
-Tags: python,coding
+Tags: python,coding,printing
 Category: Posts
 Author: Tom Clancy
 
@@ -44,3 +44,6 @@ why, I am just stomping on it at the same time, which showed me `pathlib` has th
 `with_suffix` method.
 
 UPDATE 02-02-26: You can scale the print job with `-o scaling=X` where `X` is a number between 1 and 800.
+
+UPDATE 03-15-26: At some point I added a weekly `launchd` job that prints this all out for
+me at 5am on Sunday and that has been like having a butler. You should do that.
