@@ -23,15 +23,15 @@ two movies back-to-back. I finished the very good _One Battle After Another_,
 took a breath and started _Predator: Badlands_. I only lasted through most of
 the first scene because it was so clearly their work.
 
-Harold: "It starts and there's just one Predator and he's climbing the biggest mountain ever!"
-George: "And then he gets to the top and there's this crazy Predator castle!"
-Harold: "It's all creepy and he goes in and there's like ... King Predator on a throne!"
-George: "And they get into a huge argument but we can't undertsand because they're talking Predator!"
-Together: "WITH THAT CREEPY MOUTH MOVEMENT THING!"
-Harold: "And they get into a fight!"
-George: "With swords!"
-Harold: "Really shiny big metal swords!"
-George: "But they also have like, red lasers and stuff on them and when they hit there's sparks!"
+- Harold: "It starts and there's just one Predator and he's climbing the biggest mountain ever!"
+- George: "And then he gets to the top and there's this crazy Predator castle!"
+- Harold: "It's all creepy and he goes in and there's like ... King Predator on a throne!"
+- George: "And they get into a huge argument but we can't undertsand because they're talking Predator!"
+- Together: "WITH THAT CREEPY MOUTH MOVEMENT THING!"
+- Harold: "And they get into a fight!"
+- George: "With swords!"
+- Harold: "Really shiny big metal swords!"
+- George: "But they also have like, red lasers and stuff on them and when they hit there's sparks!"
 
 So I tapped out. Maybe it turns good. The reviews I'd read suggested it does and
 I should go back, fast-forward past that and try it again. Regardless, having
