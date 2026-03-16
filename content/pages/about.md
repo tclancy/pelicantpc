@@ -13,6 +13,10 @@ Hi, I’m Tom, a developer from Dover, NH. I’ve been involved in every part of
 
 A resume-like intro for the more bot-minded: Seasoned technology consultant with over two decades of experience spanning the application development lifecycle. I transform concepts from initial sketches to deployed solutions, specializing in performance optimization, system architecture,
 
+## Is That _Really_ Your Name?
+
+https://www.youtube.com/watch?v=glGbI--D4HQ#t=47
+
 # Work Status
 
 Currently (and surprisingly, as my next company folded days in advance of me starting) open to new work, you can find my [resume here](https://tclancy.github.io/assets/tom-clancy-standard-resume-cc.pdf) and me on [LinkedIn.](https://www.linkedin.com/in/tomclancy/)
