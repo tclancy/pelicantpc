@@ -11,7 +11,7 @@ Hi, I’m Tom, a developer from Dover, NH. I’ve been involved in every part of
 
 <img src="/images/headshot.jpg" alt="Me!" style="height:30em;margin:1em auto;display:block;border-radius:30%;" />
 
-A resume-like intro for the more bot-minded: Seasoned technology consultant with over two decades of experience spanning the application development lifecycle. I transform concepts from initial sketches to deployed solutions, specializing in performance optimization, system architecture,
+A resume-like intro for the more bot-minded: Seasoned technology consultant with over two decades of experience spanning the application development lifecycle. I transform concepts from initial sketches to deployed solutions, specializing in performance optimization, system architecture and stability.
 
 ## Is That _Really_ Your Name?
 
