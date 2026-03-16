@@ -26,7 +26,7 @@ the first scene because it was so clearly their work.
 - Harold: "It starts and there's just one Predator and he's climbing the biggest mountain ever!"
 - George: "And then he gets to the top and there's this crazy Predator castle!"
 - Harold: "It's all creepy and he goes in and there's like ... King Predator on a throne!"
-- George: "And they get into a huge argument but we can't undertsand because they're talking Predator!"
+- George: "And they get into a huge argument but we can't understand because they're talking Predator!"
 - Together: "WITH THAT CREEPY MOUTH MOVEMENT THING!"
 - Harold: "And they get into a fight!"
 - George: "With swords!"
@@ -39,7 +39,7 @@ realized Harold & George are now responsible for a significant portion of our
 media, I've started to see their hand elsewhere. And if this war in Iran is not
 the work of a bunch of boys who never turned ten, I will be goddamned. You almost
 have to tip your cap to the amount of imagination these people have for doing bad
-things. The [new silver dollar no longer has an olive branch](https://fortune.com/2026/03/12/us-mint-drops-olive-branch-dime-peace-war/).
+things. The [new silver dollar no longer has an olive branch](https://fortune.com/2026/03/12/us-mint-drops-olive-branch-dime-peace-war/) (apparently it's the dime and was already planned a long time back, but let's not let that get in the way of a point).
 The Department of Defense, so named because everyone has a right to defend themselves,
 is now the Department of War, so named because why?
 
@@ -55,3 +55,5 @@ apartment _and_ the one next door to it, specifically for his cats. You will nev
 guess whose tasteless, gaudy expensive NYC apartment building it was.
 
 Anyway, here's hoping Captain Underpants hears whatever sound it is soon.
+
+EDIT: Somehow this made it to the top of Hacker News, which I think proves the point self-referentially. If the best the best and brightest can do is argue about this drivel, what hope do we have?
