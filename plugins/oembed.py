@@ -4,11 +4,17 @@ Pelican oEmbed Plugin
 
 This plugin uses Micawber to convert oEmbed URLs in markdown content
 to their embedded HTML representations during the publishing process.
+
+It works as a Markdown preprocessor extension, replacing bare oEmbed URLs
+in the markdown source with embedded HTML before typogrify or other
+post-processing can mangle the URLs.
 """
 
+import re
 import warnings
+import markdown
 from pelican import signals
-from micawber import Provider, ProviderRegistry, parse_html
+from micawber import Provider, ProviderRegistry, bootstrap_basic
 
 # Filter BeautifulSoup warnings about URLs
 from bs4 import MarkupResemblesLocatorWarning
@@ -42,36 +48,55 @@ providers.register(r'https://open\.spotify\.com/\S+', Provider('https://embed.sp
 # TikTok
 providers.register(r'https://www\.tiktok\.com/\S+/video/\d+', Provider('https://www.tiktok.com/oembed'))
 
-
-def process_content(content):
-    """
-    Process content to replace oEmbed URLs with embedded content.
-    This is called when a content object (article or page) is initialized.
-    """
-    if hasattr(content, '_content') and content._content:
-        try:
-            # Process the HTML content after markdown conversion
-            processed = parse_html(
-                content._content,
-                providers,
-                urlize_all=False,  # Don't convert all URLs, only oEmbed ones
-                maxwidth=800,      # Max width for embeds
-                maxheight=600      # Max height for embeds
-            )
-            if processed:
-                content._content = processed
-        except Exception as e:
-            # If there's an error, keep the original content
-            # You can uncomment the next line for debugging
-            # print(f"oEmbed processing error: {e}")
-            pass
+# Bare URL on its own line (not inside markdown link syntax)
+BARE_URL_RE = re.compile(r'^(https?://\S+)$')
 
 
+class OEmbedPreprocessor(markdown.preprocessors.Preprocessor):
+    """Replace bare oEmbed URLs in markdown source with HTML embeds."""
+
+    def run(self, lines):
+        new_lines = []
+        for line in lines:
+            match = BARE_URL_RE.match(line.strip())
+            if match:
+                url = match.group(1)
+                try:
+                    result = providers.request(url, maxwidth=800, maxheight=600)
+                    html = result.get('html', '')
+                    if html:
+                        # Wrap in raw HTML markers so markdown passes it through
+                        new_lines.append(html)
+                        continue
+                except Exception:
+                    pass
+            new_lines.append(line)
+        return new_lines
+
+
+class OEmbedExtension(markdown.Extension):
+    def extendMarkdown(self, md):
+        md.preprocessors.register(OEmbedPreprocessor(md), 'oembed', 30)
+
+
+def add_oembed_extension(readers):
+    """Register the markdown extension via Pelican's readers_init signal."""
+    settings = readers.settings
+    extensions = settings.get('MARKDOWN', {}).get('extension_configs', {})
+    # We can't easily inject an Extension instance through config, so we
+    # monkey-patch the reader's markdown extensions after init.
+    for reader in readers.readers.values():
+        if hasattr(reader, 'extensions') and isinstance(reader.extensions, list):
+            reader.extensions.append(OEmbedExtension())
+
+
+def pelican_init(pelican_obj):
+    """Inject the OEmbed markdown extension into Pelican's markdown config."""
+    md_settings = pelican_obj.settings.setdefault('MARKDOWN', {})
+    extensions = md_settings.setdefault('extensions', [])
+    extensions.append(OEmbedExtension())
 
 
 def register():
-    """
-    Register the plugin's signals with Pelican.
-    """
-    # Process content after it's been initialized
-    signals.content_object_init.connect(process_content)
+    """Register the plugin's signals with Pelican."""
+    signals.initialized.connect(pelican_init)

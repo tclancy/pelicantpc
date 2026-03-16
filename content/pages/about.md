@@ -19,4 +19,4 @@ https://www.youtube.com/watch?v=glGbI--D4HQ#t=47
 
 # Work Status
 
-Currently (and surprisingly, as my next company folded days in advance of me starting) open to new work, you can find my [resume here](https://tclancy.github.io/assets/tom-clancy-standard-resume-cc.pdf) and me on [LinkedIn.](https://www.linkedin.com/in/tomclancy/)
+Currently (and surprisingly, as my next company folded days in advance of me starting) open to new work, you can find my [resume here](https://tclancy.github.io/assets/tom-clancy-standard-resume-cc.pdf) and me on [LinkedIn.](https://www.linkedin.com/in/tomclancy/). <a href="mailto:tclancy@gmail.com">Or just drop me a line.</a>
