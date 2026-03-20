@@ -19,7 +19,7 @@ PLUGINS = [
     'plugins.oembed',
     'pelican.plugins.simple_footnotes',
     'pelican.plugins.deadlinks',
-    'plugins.callouts',
+    'pelican.plugins.obsidian_callouts',
 ]
 
 # deadlinks — check external links during build (DEADLINKS_VALIDATION enables full HTTP checks)

@@ -1,8 +1,8 @@
-"""Tests for plugins/callouts.py."""
+"""Tests for pelican.plugins.obsidian_callouts (via installed package)."""
 
 from __future__ import annotations
 
-from plugins.callouts import _process_html, _render_callout
+from pelican.plugins.obsidian_callouts import _process_html, _render_callout
 
 
 # ---------------------------------------------------------------------------
