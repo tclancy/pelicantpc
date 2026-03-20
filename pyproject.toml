@@ -9,6 +9,7 @@ dependencies = [
     "micawber>=0.5.6",
     "mysql-connector-python>=9.3.0",
     "pelican-deadlinks",
+    "pelican-obsidian-callouts",
     "pelican-simple-footnotes>=1.0.3",
     "pelican[markdown]>=4.11.0",
     "pre-commit>=4.5.0",
@@ -18,6 +19,7 @@ dependencies = [
 
 [tool.uv.sources]
 pelican-deadlinks = { git = "https://github.com/pelican-plugins/deadlinks.git" }
+pelican-obsidian-callouts = { git = "https://github.com/tclancy/pelican-obsidian-callouts" }
 
 [dependency-groups]
 dev = [
