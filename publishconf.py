@@ -20,7 +20,7 @@ PLUGINS = [
     'plugins.oembed',
     'pelican.plugins.simple_footnotes',
     'pelican.plugins.deadlinks',
-    'pelican.plugins.obsidian_callouts',
+    'obsidian_callouts',
 ]
 
 DELETE_OUTPUT_DIRECTORY = True

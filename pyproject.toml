@@ -19,7 +19,7 @@ dependencies = [
 
 [tool.uv.sources]
 pelican-deadlinks = { git = "https://github.com/pelican-plugins/deadlinks.git" }
-pelican-obsidian-callouts = { git = "https://github.com/tclancy/pelican-obsidian-callouts" }
+
 
 [dependency-groups]
 dev = [
