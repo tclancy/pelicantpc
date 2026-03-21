@@ -13,4 +13,4 @@ jobs:
     with:
       # see for options: https://docs.getpelican.com/en/stable/tips.html#publishing-to-github-pages-using-a-custom-github-actions-workflow
       settings: "publishconf.py"
-      requirements: "pelican[markdown] typogrify micawber"
+      requirements: "pelican[markdown] typogrify micawber pelican-obsidian-callouts pelican-simple-footnotes beautifulsoup4 pelican-deadlinks@git+https://github.com/pelican-plugins/deadlinks.git"
