@@ -17,7 +17,7 @@ CATEGORY_FEED_ATOM = "feeds/{slug}.atom.xml"
 
 # Plugins
 PLUGINS = [
-    'plugins.oembed',
+    'oembed',
     'pelican.plugins.simple_footnotes',
     'pelican.plugins.deadlinks',
     'obsidian_callouts',
