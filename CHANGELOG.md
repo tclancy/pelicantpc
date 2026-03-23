@@ -30,3 +30,9 @@
 - Update `pelicanconf.py`: add `THEME = "themes/thunderbolt"`
 - Fix class name mismatch in 404.html (BEM names → flat names matching CSS)
 - Build: 228 articles processed with no errors
+
+## 2026-03-21
+- Extracted `plugins/oembed.py` to standalone `pelican-oembed` package (tclancy/pelican-oembed)
+- Updated pelicanconf.py: `plugins.oembed` → `pelican.plugins.oembed`
+- Updated pelicanconf.py: `obsidian_callouts` → `pelican.plugins.obsidian_callouts`
+- Removed direct `micawber` and `beautifulsoup4` deps (transitive via pelican-oembed)
