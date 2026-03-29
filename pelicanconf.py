@@ -16,10 +16,10 @@ THEME_TEMPLATES_OVERRIDES = ["themes/overrides"]
 
 # Plugins
 PLUGINS = [
-    'oembed',
+    'pelican.plugins.oembed',
     'pelican.plugins.simple_footnotes',
     'pelican.plugins.deadlinks',
-    'obsidian_callouts',
+    'pelican.plugins.obsidian_callouts',
 ]
 
 # deadlinks — check external links during build (DEADLINKS_VALIDATION enables full HTTP checks)
