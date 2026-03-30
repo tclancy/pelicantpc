@@ -1,5 +1,6 @@
 Title: Music
 Slug: music
+Template: music
 Date: 2025-05-29 11:12:38
 Tags: reviews
 Category: Pages
