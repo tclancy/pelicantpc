@@ -1,7 +1,7 @@
 Title: New Mountain Goats Album
 Slug: new-mountain-goats-album
 Date: 2008-02-07 18:17:22
-Tags: 
+Tags: music
 Category: Posts
 Author: Tom Clancy
 

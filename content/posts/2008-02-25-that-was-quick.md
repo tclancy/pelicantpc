@@ -1,7 +1,7 @@
 Title: That Was Quick
 Slug: that-was-quick
 Date: 2008-02-25 14:23:54
-Tags: 
+Tags: music
 Category: Posts
 Author: Tom Clancy
 

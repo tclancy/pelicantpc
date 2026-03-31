@@ -1,7 +1,7 @@
 Title: New Gnarls Barkley
 Slug: new-gnarls-barkley
 Date: 2008-03-10 13:11:58
-Tags: 
+Tags: music
 Category: Posts
 Author: Tom Clancy
 

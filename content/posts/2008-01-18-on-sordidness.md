@@ -1,7 +1,7 @@
 Title: On Sordidness
 Slug: on-sordidness
 Date: 2008-01-18 17:50:41
-Tags: 
+Tags: music
 Category: Posts
 Author: Tom Clancy
 

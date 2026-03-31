@@ -1,7 +1,7 @@
 Title: SXSW Music Torrent
 Slug: sxsw-music-torrent
 Date: 2008-03-12 10:15:29
-Tags: 
+Tags: music
 Category: Posts
 Author: Tom Clancy
 
