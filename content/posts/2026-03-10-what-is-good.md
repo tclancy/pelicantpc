@@ -1,7 +1,7 @@
 Title: What is Good? 2006-03-10
 Slug: wig-26310
 Date: 2026-03-10 20:29:38
-Tags: wig
+Tags: wig,music
 Category: Posts
 Author: Tom Clancy
 

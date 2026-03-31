@@ -1,7 +1,7 @@
 Title: The AV Club
 Slug: the-av-club
 Date: 2008-05-22 11:12:13
-Tags: 
+Tags: music
 Category: Posts
 Author: Tom Clancy
 

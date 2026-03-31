@@ -1,7 +1,7 @@
 Title: Burying the Hatchet
 Slug: burying-the-hatchet
 Date: 2008-03-18 07:07:18
-Tags: 
+Tags: music
 Category: Posts
 Author: Tom Clancy
 

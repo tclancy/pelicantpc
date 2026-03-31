@@ -1,7 +1,7 @@
 Title: Words and Phrases that Cause Me to Close a Music Review
 Slug: words-and-phrases-that-cause-me-to-close-a-music-review
 Date: 2008-07-30 12:48:52
-Tags: 
+Tags: music
 Category: Posts
 Author: Tom Clancy
 

@@ -1,7 +1,7 @@
 Title: New Pornographers Video
 Slug: new-pornographers-video
 Date: 2008-02-14 09:27:46
-Tags: 
+Tags: music
 Category: Posts
 Author: Tom Clancy
 
