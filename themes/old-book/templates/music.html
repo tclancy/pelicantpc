@@ -1,0 +1,28 @@
+{% extends "page.html" %}
+
+{% block content %}
+<article>
+    <header class="article-header">
+        <h1 class="article-title">{{ page.title }}</h1>
+    </header>
+    <div class="article-body">
+        {{ page.content }}
+
+        <h2>Posts</h2>
+        <div class="chapter-list">
+            {% for article in articles if article.tags and ('music' in article.tags|map(attribute='slug') or 'mtw' in article.tags|map(attribute='slug')) %}
+            <div class="chapter-entry">
+                <div class="entry-date">
+                    {{ article.date.strftime('%b') }}<br>{{ article.date.strftime('%Y') }}
+                </div>
+                <div class="entry-body">
+                    <h2 class="chapter-title">
+                        <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+                    </h2>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</article>
+{% endblock %}
