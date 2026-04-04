@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Categories &mdash; {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<div class="list-header">
+    <span class="list-label">Subjects</span>
+    <h1 class="list-title">Categories</h1>
+</div>
+
+<div class="chapter-list">
+    {% for cat, articles in categories %}
+    <div class="chapter-entry">
+        <div class="entry-date">{{ articles|length }}<br><span style="font-size:0.7rem;">pieces</span></div>
+        <div class="entry-body">
+            <h2 class="chapter-title">
+                <a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a>
+            </h2>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Archives &mdash; {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<div class="list-header">
+    <span class="list-label">Complete Record</span>
+    <h1 class="list-title">Archives</h1>
+</div>
+
+<div class="chapter-list">
+    {% for article in articles %}
+    <div class="chapter-entry">
+        <div class="entry-date">
+            {{ article.date.strftime('%b') }}<br>{{ article.date.strftime('%Y') }}
+        </div>
+        <div class="entry-body">
+            <span class="chapter-label">{{ article.category }}</span>
+            <h2 class="chapter-title">
+                <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+            </h2>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
