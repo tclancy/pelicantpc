@@ -49,6 +49,18 @@ make devserver  # starts both watcher + HTTP server together
 
 The GitHub Action runs `pelican content -s publishconf.py` on push to `main`.
 
+## Themes
+
+### Old Book
+
+- Work in progress: we need to split up the `article.content` so headers can appear properly.
+- Need to test footnotes
+- Test subheaders and then reformat some docs (plus update Thunderbolt theme)
+
+### Thunderbolt
+
+- Will need to be updated for changes above before switching can work
+
 ## Plugins
 
 All active plugins are listed in `pelicanconf.py` under `PLUGINS`.

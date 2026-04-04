@@ -55,9 +55,21 @@ def test_render_lucide_icon_cdn():
 
 def test_render_all_known_types():
     types = [
-        "note", "tip", "important", "warning", "caution",
-        "abstract", "info", "todo", "success", "question",
-        "failure", "danger", "bug", "example", "quote",
+        "note",
+        "tip",
+        "important",
+        "warning",
+        "caution",
+        "abstract",
+        "info",
+        "todo",
+        "success",
+        "question",
+        "failure",
+        "danger",
+        "bug",
+        "example",
+        "quote",
     ]
     for t in types:
         html = _render_callout(t, "", "", ["<p>Body.</p>"])
@@ -108,9 +120,7 @@ def test_process_html_custom_title_body_is_separate():
     processed, _ = _process_html(raw)
     body_start = processed.index("pelican-callout-body")
     body_section = processed[body_start:]
-    assert "Watch Out!" not in body_section, (
-        "Custom title must not appear in body div"
-    )
+    assert "Watch Out!" not in body_section, "Custom title must not appear in body div"
     assert "Be careful." in body_section
 
 
