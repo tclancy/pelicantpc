@@ -11,19 +11,29 @@
 
   var html = document.documentElement;
 
+  function storageGet(key, fallback) {
+    try { return localStorage.getItem(key) || fallback; } catch (e) { return fallback; }
+  }
+
+  function storageSet(key, value) {
+    try { localStorage.setItem(key, value); } catch (e) { /* private-browsing / sandboxed */ }
+  }
+
   function applyTheme(theme) {
     html.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
+    storageSet('theme', theme);
     if (theme === 'old-book') {
       btn.textContent = '⚡';
       btn.title = 'Switch to Thunderbolt & Lightfoot';
+      btn.setAttribute('aria-label', 'Switch to Thunderbolt & Lightfoot');
     } else {
       btn.textContent = '📖';
       btn.title = 'Switch to Old Book';
+      btn.setAttribute('aria-label', 'Switch to Old Book');
     }
   }
 
-  var current = localStorage.getItem('theme') || 'thunderbolt';
+  var current = storageGet('theme', 'thunderbolt');
   applyTheme(current);
 
   btn.addEventListener('click', function () {
