@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}{{ article.title }} &mdash; {{ SITENAME }}{% endblock %}
+
+{% block extra_head %}
+    {% if article.description %}
+    <meta name="description" content="{{ article.description }}" />
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+<article>
+    <header class="article-header">
+        <span class="article-chapter-label">{{ article.category }}</span>
+        <h1 class="article-title">{{ article.title }}</h1>
+        <time class="article-date" datetime="{{ article.date.isoformat() }}">
+            {{ article.date.strftime('%B %Y') }}
+        </time>
+    </header>
+
+    <div class="article-body">
+        {{ article.content }}
+    </div>
+
+    {% if article.tags %}
+    <div class="article-tags">
+        <span class="tag-label">filed under</span>
+        {% for tag in article.tags %}
+        <a href="{{ SITEURL }}/{{ tag.url }}" class="tag">{{ tag }}</a>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <footer class="article-footer">
+        <div class="article-nav">
+            {% if article.prev_article %}
+            <a href="{{ SITEURL }}/{{ article.prev_article.url }}" class="article-nav__prev">
+                <span class="nav-label">&lsaquo; Older</span>
+                <span class="nav-title">{{ article.prev_article.title }}</span>
+            </a>
+            {% else %}
+            <span></span>
+            {% endif %}
+            {% if article.next_article %}
+            <a href="{{ SITEURL }}/{{ article.next_article.url }}" class="article-nav__next">
+                <span class="nav-label">Newer &rsaquo;</span>
+                <span class="nav-title">{{ article.next_article.title }}</span>
+            </a>
+            {% endif %}
+        </div>
+    </footer>
+</article>
+{% endblock %}
