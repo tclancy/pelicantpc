@@ -15,15 +15,19 @@ THEME = "themes/thunderbolt"
 THEME_TEMPLATES_OVERRIDES = ["themes/overrides"]
 
 # Plugins
+PLUGIN_PATHS = ["plugins"]
 PLUGINS = [
-    'pelican.plugins.oembed',
-    'pelican.plugins.simple_footnotes',
-    'pelican.plugins.deadlinks',
-    'pelican.plugins.obsidian_callouts',
+    "pelican.plugins.oembed",
+    "pelican.plugins.simple_footnotes",
+    "pelican.plugins.deadlinks",
+    "pelican.plugins.obsidian_callouts",
+    "ornaments",
 ]
 
 # deadlinks — check external links during build (DEADLINKS_VALIDATION enables full HTTP checks)
-DEADLINKS_VALIDATION = False  # set to True for periodic link audits; slow on 229 articles
+DEADLINKS_VALIDATION = (
+    False  # set to True for periodic link audits; slow on 229 articles
+)
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -33,14 +37,13 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blog roll
-LINKS = (
-)
+LINKS = ()
 
 # Social widget
 SOCIAL = (
     ("GitHub", "https://github.com/tclancy"),
     ("StackOverflow", "https://stackoverflow.com/users/7376/tom"),
-    ("BlueSky", "https://bsky.app/profile/tclancy.bsky.social")
+    ("BlueSky", "https://bsky.app/profile/tclancy.bsky.social"),
 )
 
 DEFAULT_PAGINATION = 10
