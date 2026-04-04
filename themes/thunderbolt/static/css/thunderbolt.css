@@ -992,3 +992,228 @@ img { max-width: 100%; height: auto; display: block; }
     .archive-item { flex-direction: column; gap: 0.2rem; }
     .archive-date { min-width: unset; }
 }
+
+/* ── Theme Toggle Button ───────────────────────────────────── */
+.theme-toggle {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: var(--cream);
+    font-size: 1rem;
+    line-height: 1;
+    padding: 0.3rem 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+    flex-shrink: 0;
+}
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* ── OLD BOOK THEME OVERRIDE ───────────────────────────────── */
+/* Toggle by setting data-theme="old-book" on <html>.
+   Thunderbolt layout is preserved; this swaps the palette and typography. */
+
+[data-theme="old-book"] {
+    --orange:       #7a2828;
+    --blue:         #5a3a1e;
+    --cream:        #f2e8d5;
+    --text:         #1c1309;
+    --red:          #7a2828;
+    --border:       #c2a87a;
+    --muted:        #6b5a44;
+    --orange-light: #a35050;
+    --blue-dark:    #2e1e10;
+    --cream-dark:   #e8d9bf;
+}
+
+/* Paper texture on body */
+[data-theme="old-book"] body {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    line-height: 1.8;
+    background-image:
+        radial-gradient(ellipse at 20% 50%, rgba(180,140,80,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(120,80,40,0.05) 0%, transparent 50%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* Old-book header: darken overlay to brown/sepia instead of blue */
+[data-theme="old-book"] .site-header::before {
+    background-color: rgba(44, 24, 8, 0.85);
+}
+[data-theme="old-book"] .site-header {
+    border-bottom-color: #c2a87a;
+}
+
+/* Nav links */
+[data-theme="old-book"] .site-nav ul li a {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+[data-theme="old-book"] .site-nav ul li a:hover,
+[data-theme="old-book"] .site-nav ul li.active a {
+    background-color: #7a2828;
+}
+
+/* Theme toggle in old-book mode */
+[data-theme="old-book"] .theme-toggle {
+    color: #f2e8d5;
+    border-color: rgba(194, 168, 122, 0.5);
+}
+
+/* Headlines use IM Fell English; remove burn text-shadow */
+[data-theme="old-book"] .article-title,
+[data-theme="old-book"] .archive-title,
+[data-theme="old-book"] .tag-cloud-title,
+[data-theme="old-book"] .page-title,
+[data-theme="old-book"] .archive-year {
+    font-family: 'IM Fell English', Georgia, serif;
+    font-weight: 400;
+    text-shadow: none;
+}
+[data-theme="old-book"] .archive-year {
+    color: var(--text);
+    border-left-color: var(--border);
+}
+
+[data-theme="old-book"] .post-card__title {
+    font-family: 'IM Fell English', Georgia, serif;
+    font-weight: 400;
+    text-shadow: none;
+}
+
+[data-theme="old-book"] .nav-title {
+    font-family: 'IM Fell English', Georgia, serif;
+    font-weight: 400;
+}
+
+/* Article body: serif, no burn shadows */
+[data-theme="old-book"] .article-body,
+[data-theme="old-book"] .page-content {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    color: #1c1309;
+}
+
+[data-theme="old-book"] .article-body h1,
+[data-theme="old-book"] .article-body h2,
+[data-theme="old-book"] .article-body h3,
+[data-theme="old-book"] .article-body h4,
+[data-theme="old-book"] .page-content h1,
+[data-theme="old-book"] .page-content h2 {
+    font-family: 'Cinzel', Georgia, serif;
+    font-weight: 500;
+    text-shadow: none;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+[data-theme="old-book"] .article-body h2 {
+    border-left-color: #c2a87a;
+}
+[data-theme="old-book"] .page-content h2 {
+    border-left-color: #c2a87a;
+    text-shadow: none;
+}
+
+/* Code blocks: dark parchment */
+[data-theme="old-book"] .article-body code {
+    background-color: #e8d9bf;
+    border-color: #c2a87a;
+}
+[data-theme="old-book"] .article-body pre {
+    background-color: #1c1309;
+    border-left-color: #c2a87a;
+}
+
+/* Blockquote */
+[data-theme="old-book"] .article-body blockquote {
+    border-left-color: #c2a87a;
+    background-color: #e8d9bf;
+}
+
+/* Category pill: use muted brown */
+[data-theme="old-book"] .post-card__category a,
+[data-theme="old-book"] .article-category a {
+    background-color: #5a3a1e;
+}
+[data-theme="old-book"] .post-card__category a:hover,
+[data-theme="old-book"] .article-category a:hover {
+    background-color: #7a2828;
+}
+
+/* Sidebar */
+[data-theme="old-book"] .sidebar-section {
+    border-top-color: #c2a87a;
+    background-color: #e8d9bf;
+}
+[data-theme="old-book"] .sidebar-heading {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #1c1309;
+    border-bottom-color: #c2a87a;
+}
+[data-theme="old-book"] .sidebar-blurb,
+[data-theme="old-book"] .sidebar-recent li {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-style: italic;
+    font-size: 0.82rem;
+}
+
+/* Footer */
+[data-theme="old-book"] .site-footer {
+    background-color: #2e1e10;
+    border-top-color: #c2a87a;
+}
+
+/* Portfolio cards */
+[data-theme="old-book"] .portfolio-card {
+    border-top-color: #c2a87a;
+    background-color: #e8d9bf;
+}
+[data-theme="old-book"] .portfolio-card:hover {
+    border-top-color: #7a2828;
+}
+[data-theme="old-book"] .portfolio-card__title {
+    font-family: 'IM Fell English', Georgia, serif;
+    font-weight: 400;
+    text-shadow: none;
+}
+[data-theme="old-book"] .portfolio-card__summary {
+    font-family: 'Libre Baskerville', Georgia, serif;
+}
+
+/* Pagination */
+[data-theme="old-book"] .pagination__link {
+    color: var(--text);
+    border-color: var(--border);
+}
+[data-theme="old-book"] .pagination__link:hover {
+    background-color: #7a2828;
+    border-color: #7a2828;
+}
+
+/* Tags */
+[data-theme="old-book"] .tag {
+    border-color: #c2a87a;
+    color: #6b5a44;
+}
+[data-theme="old-book"] .tag:hover {
+    border-color: #7a2828;
+    color: #7a2828;
+}
+[data-theme="old-book"] .tag--cloud {
+    background-color: #e8d9bf;
+    border-color: #c2a87a;
+    color: #1c1309;
+}
+[data-theme="old-book"] .tag--cloud:hover {
+    background-color: #7a2828;
+    border-color: #7a2828;
+}
