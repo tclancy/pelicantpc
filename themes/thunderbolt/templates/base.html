@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/thunderbolt.css" />
     <!-- FOUC prevention: set data-theme before first paint -->
     <script>
-      (function(){var t=localStorage.getItem('theme')||'thunderbolt';document.documentElement.setAttribute('data-theme',t);})();
+      (function(){try{var t=localStorage.getItem('theme')||'thunderbolt';}catch(e){var t='thunderbolt';}document.documentElement.setAttribute('data-theme',t);})();
     </script>
     {% if FEED_ALL_ATOM %}
     <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} — Full Atom Feed" />
