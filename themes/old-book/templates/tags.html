@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Tags &mdash; {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<div class="list-header">
+    <span class="list-label">All subjects</span>
+    <h1 class="list-title">Tags</h1>
+</div>
+
+<div style="text-align:center; line-height:2.5;">
+    {% for tag, articles in tags | sort %}
+    <a href="{{ SITEURL }}/{{ tag.url }}" class="tag" style="font-family:'IM Fell English',serif;font-style:italic;font-size:{% if articles|length > 10 %}1.1rem{% elif articles|length > 4 %}0.95rem{% else %}0.8rem{% endif %};color:var(--ink-faded);text-decoration:none;margin:0.25rem 0.6rem;">
+        #{{ tag }} <small style="font-size:0.65rem;color:var(--gold);">({{ articles|length }})</small>
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}

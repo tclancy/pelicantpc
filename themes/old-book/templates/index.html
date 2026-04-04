@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}{{ SITENAME }}{% endblock %}
+
+{% block content %}
+<div class="chapter-list">
+    {% if articles_page %}
+        {% set articles_to_show = articles_page.object_list %}
+    {% else %}
+        {% set articles_to_show = articles %}
+    {% endif %}
+
+    {% for article in articles_to_show %}
+    <div class="chapter-entry">
+        <div class="entry-date">
+            {{ article.date.strftime('%b') }}<br>{{ article.date.strftime('%Y') }}
+        </div>
+
+        <div class="entry-body">
+            <span class="chapter-label">{{ article.category }}</span>
+            <h2 class="chapter-title">
+                <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+            </h2>
+
+            <div class="entry-summary">
+                {{ article.summary }}
+            </div>
+
+            <a href="{{ SITEURL }}/{{ article.url }}" class="read-more">Read the full piece</a>
+
+            {% if article.tags %}
+            <div class="entry-tags">
+                {% for tag in article.tags %}
+                <a href="{{ SITEURL }}/{{ tag.url }}" class="tag">{{ tag }}</a>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% if articles_page %}
+{% include 'pagination.html' %}
+{% endif %}
+{% endblock %}

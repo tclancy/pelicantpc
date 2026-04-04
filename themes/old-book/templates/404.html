@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Page Not Found &mdash; {{ SITENAME }}{% endblock %}
+{% block content %}
+<div style="text-align:center;padding:4rem 0;">
+    <div class="ornament">❦ &nbsp; ❧</div>
+    <h1 class="list-title" style="margin-bottom:1rem;">Page Not Found</h1>
+    <p style="font-family:'IM Fell English',serif;font-style:italic;color:var(--ink-faded);margin-bottom:2rem;">
+        The page you seek has not been catalogued here.
+    </p>
+    <a href="{{ SITEURL }}/" class="read-more">Return to the index</a>
+</div>
+{% endblock %}

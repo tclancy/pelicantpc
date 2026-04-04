@@ -1,0 +1,624 @@
+/* ─── OLD BOOK THEME ────────────────────────────────────────────────────────
+   A 19th-century book aesthetic for Tom Clancy's blog.
+   Based on the prototype-1-book.html design (whoami PR #4).
+   Fonts: Cinzel (titles), IM Fell English (display/italic), Libre Baskerville (body)
+   ────────────────────────────────────────────────────────────────────────── */
+
+/* ─── CUSTOM PROPERTIES ─── */
+:root {
+  --parchment:      #f2e8d5;
+  --parchment-dark: #e8d9bf;
+  --parchment-deep: #dcc9a8;
+  --ink:            #1c1309;
+  --ink-mid:        #3d2f1e;
+  --ink-faded:      #6b5a44;
+  --accent:         #7a2828;
+  --accent-dim:     #a35050;
+  --gold:           #8c6b2a;
+  --rule:           #c2a87a;
+
+  --content-width:  640px;
+  --page-max-width: 1140px;
+  --gutter-width:   220px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 18px; scroll-behavior: smooth; }
+
+/* ─── BODY / PAPER ─── */
+body {
+  background: var(--parchment);
+  color: var(--ink);
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  min-height: 100vh;
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(180,140,80,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(120,80,40,0.05) 0%, transparent 50%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* ─── PAGE STRUCTURE ─── */
+.page-wrapper {
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.content-col {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  position: relative;
+}
+
+/* ─── SITE HEADER / MASTHEAD ─── */
+.site-header {
+  text-align: center;
+  padding: 2.5rem 1rem 1.5rem;
+  border-bottom: 2px solid var(--rule);
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.site-header::before,
+.site-header::after {
+  content: '';
+  display: block;
+  height: 1px;
+  background: var(--rule);
+  margin: 0.6rem auto;
+  width: 50%;
+}
+
+.site-title a {
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.ornament-top {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--gold);
+  letter-spacing: 0.5em;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  font-family: 'Cinzel', serif;
+}
+
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.site-nav a {
+  font-family: 'Cinzel', serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--ink-faded);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.site-nav a:hover { color: var(--accent); }
+
+/* ─── ORNAMENTAL DIVIDERS ─── */
+.ornament {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1.1rem;
+  letter-spacing: 0.8em;
+  margin: 3rem 0;
+  user-select: none;
+}
+
+.rule-ornament {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.rule-ornament::before,
+.rule-ornament::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+
+.rule-ornament span {
+  color: var(--gold);
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+/* ─── INDEX PAGE — CHAPTER ENTRIES ─── */
+.chapter-list {
+  margin: 0;
+  padding: 0;
+}
+
+.chapter-entry {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 0 2rem;
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.chapter-entry + .chapter-entry {
+  padding-top: 3rem;
+  border-top: 1px solid var(--parchment-deep);
+}
+
+.entry-date {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--ink-faded);
+  text-align: right;
+  padding-right: 1.25rem;
+  border-right: 1px solid var(--rule);
+  padding-top: 0.25rem;
+  line-height: 1.4;
+}
+
+.entry-body {
+  padding-top: 0;
+}
+
+.chapter-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ink-faded);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.chapter-title {
+  font-family: 'IM Fell English', serif;
+  font-size: 1.45rem;
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--ink);
+  margin-bottom: 0.75rem;
+}
+
+.chapter-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.chapter-title a:hover { color: var(--accent); }
+
+/* Dropcap on index summaries */
+.entry-summary > p:first-of-type::first-letter {
+  font-family: 'IM Fell English', serif;
+  font-size: 3.2em;
+  line-height: 0.75;
+  float: left;
+  margin-right: 0.06em;
+  margin-top: 0.08em;
+  color: var(--accent);
+  font-weight: 400;
+}
+
+.entry-summary {
+  font-size: 0.95rem;
+  color: var(--ink-mid);
+  line-height: 1.75;
+  margin-bottom: 0.75rem;
+}
+
+.read-more {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.2s;
+}
+
+.read-more::after { content: ' ❧'; }
+.read-more:hover { color: var(--accent); }
+
+/* Index tags */
+.entry-tags {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.entry-tags .tag {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 0.78rem;
+  color: var(--ink-faded);
+  text-decoration: none;
+}
+
+.entry-tags .tag::before { content: '#'; }
+.entry-tags .tag:hover { color: var(--accent); }
+
+/* ─── ARTICLE DETAIL PAGE ─── */
+.article-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.article-chapter-label {
+  display: block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ink-faded);
+  margin-bottom: 0.4rem;
+}
+
+.article-title {
+  font-family: 'IM Fell English', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+
+.article-date {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--ink-faded);
+  display: block;
+  margin-top: 0.4rem;
+}
+
+/* ─── ARTICLE BODY ─── */
+.article-body {
+  position: relative;
+}
+
+/* Dropcap on first paragraph of article */
+.article-body > p:first-of-type::first-letter {
+  font-family: 'IM Fell English', serif;
+  font-size: 4.4em;
+  line-height: 0.72;
+  float: left;
+  margin-right: 0.06em;
+  margin-top: 0.06em;
+  color: var(--accent);
+  font-weight: 400;
+}
+
+.article-body p {
+  margin-bottom: 1.25rem;
+}
+
+.article-body p + p {
+  text-indent: 1.5em;
+  margin-top: 0;
+}
+
+/* Keep indent off the first paragraph (after dropcap) */
+.article-body > p:first-of-type {
+  text-indent: 0;
+}
+
+.article-body h2,
+.article-body h3,
+.article-body h4 {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-mid);
+  margin: 2rem 0 0.75rem;
+}
+
+.article-body h2 { font-size: 0.9rem; }
+.article-body h3 { font-size: 0.78rem; }
+
+.article-body blockquote {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--accent);
+  border-left: 3px solid var(--accent-dim);
+  margin: 1.5rem 0;
+  padding: 0.25rem 0 0.25rem 1.25rem;
+  line-height: 1.5;
+}
+
+.article-body a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: var(--rule);
+}
+
+.article-body a:hover { text-decoration-color: var(--accent); }
+
+.article-body ul,
+.article-body ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.article-body li { margin-bottom: 0.3rem; }
+
+.article-body code {
+  font-family: 'Courier Prime', monospace;
+  font-size: 0.88em;
+  background: var(--parchment-dark);
+  padding: 0.1em 0.3em;
+  border-radius: 2px;
+  color: var(--ink-mid);
+}
+
+.article-body pre {
+  background: var(--parchment-dark);
+  border: 1px solid var(--rule);
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.article-body pre code {
+  background: none;
+  padding: 0;
+}
+
+/* ─── GUTTER FOOTNOTES ─── */
+/* Inline .footnote divs are placed right after their <sup> by the ornaments plugin.
+   On wide screens, they float into the right margin.
+   On narrow screens, they display inline below the reference. */
+.footnote-ref {
+  font-size: 0.65em;
+  vertical-align: super;
+  line-height: 0;
+  color: var(--accent-dim);
+  cursor: default;
+}
+
+.footnote {
+  font-family: 'Libre Baskerville', serif;
+  font-style: italic;
+  font-size: 0.78rem;
+  color: var(--ink-faded);
+  line-height: 1.5;
+  border-left: 2px solid var(--rule);
+  padding-left: 0.75rem;
+}
+
+@media (min-width: 900px) {
+  .article-body {
+    /* Give space for the gutter */
+    overflow: visible;
+  }
+
+  .footnote {
+    float: right;
+    clear: right;
+    width: var(--gutter-width);
+    margin-right: calc(-1 * (var(--gutter-width) + 2rem));
+    margin-top: -1.2em;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* ─── ARTICLE TAGS (left margin) ─── */
+.article-tags {
+  margin: 2rem 0 0;
+}
+
+.article-tags .tag-label {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 0.78rem;
+  color: var(--ink-faded);
+  display: inline;
+  margin-right: 0.25rem;
+}
+
+.article-tags .tag {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 0.78rem;
+  color: var(--ink-faded);
+  text-decoration: none;
+}
+
+.article-tags .tag::before { content: '#'; }
+.article-tags .tag + .tag::before { content: ', #'; }
+.article-tags .tag:hover { color: var(--accent); }
+
+@media (min-width: 900px) {
+  .article-tags {
+    float: left;
+    clear: left;
+    width: 160px;
+    margin-left: calc(-1 * (160px + 2rem));
+    text-align: right;
+    margin-top: -0.5rem;
+  }
+}
+
+/* ─── ARTICLE FOOTER / NAV ─── */
+.article-footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+}
+
+.article-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.article-nav a {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faded);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  max-width: 45%;
+}
+
+.article-nav a:hover { color: var(--accent); }
+
+.nav-title {
+  font-family: 'IM Fell English', serif;
+  font-size: 0.9rem;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink-mid);
+  font-style: italic;
+}
+
+.article-nav__prev { align-items: flex-start; }
+.article-nav__next { align-items: flex-end; }
+
+/* ─── PAGINATION ─── */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 3rem 0;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--rule);
+}
+
+.pagination a,
+.pagination span {
+  font-family: 'Cinzel', serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faded);
+  text-decoration: none;
+}
+
+.pagination a:hover { color: var(--accent); }
+
+.pagination .current {
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent);
+}
+
+/* ─── ARCHIVE / CATEGORY / TAG HEADERS ─── */
+.list-header {
+  text-align: center;
+  padding: 2rem 0;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.list-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ink-faded);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.list-title {
+  font-family: 'IM Fell English', serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--ink);
+}
+
+/* ─── SITE FOOTER ─── */
+.site-footer {
+  margin-top: 5rem;
+  padding: 2rem 1rem;
+  border-top: 2px solid var(--rule);
+  text-align: center;
+}
+
+.site-footer::before {
+  content: '❦  ·  ❧  ·  ❦';
+  display: block;
+  color: var(--gold);
+  font-size: 1rem;
+  letter-spacing: 0.5em;
+  margin-bottom: 1rem;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.footer-social a {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faded);
+  text-decoration: none;
+}
+
+.footer-social a:hover { color: var(--accent); }
+
+.footer-copy {
+  font-family: 'Cinzel', serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.15em;
+  color: var(--ink-faded);
+  text-transform: uppercase;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 720px) {
+  html { font-size: 16px; }
+
+  .chapter-entry {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .entry-date {
+    border-right: none;
+    border-bottom: 1px solid var(--rule);
+    padding-right: 0;
+    padding-bottom: 0.5rem;
+    text-align: left;
+  }
+
+  .article-title { font-size: 1.6rem; }
+}
