@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-04-04
+- Add CSS variable theme switcher (issues #18/#19): toggle button in thunderbolt nav switches between Thunderbolt & Lightfoot palette (default) and Old Book palette (parchment/ink/book fonts)
+- `[data-theme="old-book"]` override block in thunderbolt.css overrides all palette CSS variables + font families for key elements
+- `theme-toggle.js`: localStorage persistence with try/catch safety guards, dynamic aria-label, FOUC-prevention inline script in `<head>`
+- Load both font sets (Zilla Slab/Source Sans/Source Serif + Cinzel/IM Fell English/Libre Baskerville) on all pages
+- Investigated CI failure in run 23984950445: transient TLS disconnect in `actions/deploy-pages@v4`; no code changes needed
+- Branch: `claude/theme-switcher-18` (PR #20)
+
 ## 2026-03-11
 - Add CSS styling for all 15 Obsidian callout types (issue #4): left border, tinted background, colored title, CSS-filtered icon, foldable arrows via ::after
 - Color palette matches Obsidian defaults: blue (note/info/todo), sky-blue (abstract), mint-green (tip/important/question), green (success), orange (warning/caution), red (failure/danger/bug), purple (example), gray (quote)

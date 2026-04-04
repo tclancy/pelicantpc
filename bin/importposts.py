@@ -21,10 +21,11 @@ Author: Tom Clancy
 %(content)s
 """
 
+
 def sanitize_title(title: str) -> str:
     """
     Not sure if I need to escape or not. Without escaping, pelican content shows
-    
+
     smartypants.py:271: SyntaxWarning: invalid escape sequence '\S'
     if re.match("\S", prev_token_last_char):
     smartypants.py:277: SyntaxWarning: invalid escape sequence '\S'
@@ -34,6 +35,7 @@ def sanitize_title(title: str) -> str:
     """
     return title
     # return title.replace('"', r'\"')
+
 
 def sanitize_content(content: str) -> str:
     """
@@ -46,14 +48,18 @@ def sanitize_content(content: str) -> str:
     content = re.sub(r"{%\s+(\w+)\s+%}", r"\1", content)
     return content
 
+
 def repath_images(content: str) -> str:
     """
     Change some paths to pelican-friendly ones
     """
     # literally one post
     content = content.replace("/static/thoughts", "/images/legacy")
-    content = content.replace("http://tkc.webfactional.com/blog/wp-content/uploads", "/images/wordpress")
+    content = content.replace(
+        "http://tkc.webfactional.com/blog/wp-content/uploads", "/images/wordpress"
+    )
     return content
+
 
 def make_oembeds(content: str) -> str:
     """
@@ -70,33 +76,38 @@ def make_oembeds(content: str) -> str:
     content = content.replace("://twitter.com/", "://x.com/")
     return content
 
+
 def get_posts():
     try:
-        conn = mysql.connector.connect(user=os.environ["MYSQL_USER"], password=os.environ["MYSQL_PASS"],
-                                       host="127.0.0.1", database="tkc2")
+        conn = mysql.connector.connect(
+            user=os.environ["MYSQL_USER"],
+            password=os.environ["MYSQL_PASS"],
+            host="127.0.0.1",
+            database="tkc2",
+        )
     except mysql.connector.Error:
         logger.exception("Error connecting to MySQL database")
         sys.exit(1)
     cursor = conn.cursor()
-    cursor.execute("SELECT name, slug, content, publish_date, tags, type_id FROM thoughts_post WHERE active = 1")
-    for (name, slug, content, publish_date, tags, type_id) in cursor:
+    cursor.execute(
+        "SELECT name, slug, content, publish_date, tags, type_id FROM thoughts_post WHERE active = 1"
+    )
+    for name, slug, content, publish_date, tags, type_id in cursor:
         if not content:
             print(f"Skipping {name} for no content")
             continue
         filename = f"content/posts/{publish_date.strftime('%Y-%m-%d')}-{slug}.md"
         with open(filename, "w") as f:
-            f.write(PAGE_TEMPLATE % {
-                "title": sanitize_title(name),
-                "content": make_oembeds(
-                    sanitize_content(
-                        repath_images(content)
-                    )
-                ),
-                "tags": ",".join(tags.split()),
-                "date": publish_date,
-                "slug": slug,
-            }
-        )
+            f.write(
+                PAGE_TEMPLATE
+                % {
+                    "title": sanitize_title(name),
+                    "content": make_oembeds(sanitize_content(repath_images(content))),
+                    "tags": ",".join(tags.split()),
+                    "date": publish_date,
+                    "slug": slug,
+                }
+            )
     cursor.close()
     conn.close()
 
