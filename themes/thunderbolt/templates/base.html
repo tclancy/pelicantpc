@@ -7,8 +7,13 @@
     <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,600;0,700;1,600&family=Source+Sans+3:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;1,8..60,400&display=swap" rel="stylesheet">
+    <!-- Thunderbolt fonts + Old Book fonts (both loaded; active set determined by data-theme) -->
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,600;0,700;1,600&family=Source+Sans+3:wght@400;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;1,8..60,400&family=Cinzel:wght@400;500;600&family=IM+Fell+English:ital@0;1&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ SITEURL }}/theme/css/thunderbolt.css" />
+    <!-- FOUC prevention: set data-theme before first paint -->
+    <script>
+      (function(){try{var t=localStorage.getItem('theme')||'thunderbolt';}catch(e){var t='thunderbolt';}document.documentElement.setAttribute('data-theme',t);})();
+    </script>
     {% if FEED_ALL_ATOM %}
     <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} — Full Atom Feed" />
     {% endif %}
@@ -34,6 +39,7 @@
                     <li{% if cat == category %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
                     {% endfor %}
                 </ul>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Switch theme" title="Switch to Old Book">📖</button>
             </nav>
         </div>
     </header>
@@ -52,5 +58,6 @@
             <p class="footer-copy">&copy; {{ SITENAME }}</p>
         </div>
     </footer>
+    <script src="{{ SITEURL }}/theme/js/theme-toggle.js"></script>
 </body>
 </html>
