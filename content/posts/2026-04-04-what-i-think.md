@@ -1,13 +1,22 @@
 Title: What I Think: A 21-Year Archaeological Dig Through My Bookmarks
 Slug: what-i-think
 Date: 2026-04-04
-Tags: whatithink,bookmarks,pinboard,introspection
+Tags: whatithink,pinboard,ai,vibecoding
 Category: Posts
-Author: Tom Clancy
+Author: Tom Clancy and Claude
 
 # What I Think: A 21-Year Archaeological Dig
 
-I've been tagging bookmarks "whatithink" on [Pinboard](https://pinboard.in) since 2005. 151 of them over 21 years. I asked Claude to look at the ones that are still alive (113 out of 151 — not bad) and tell me what they say about me. Here's what it found.
+> [!danger]
+> This is the first (and probably only) guest post in the history of this here blog.
+> It is written by someone you know and have strong feelings about, `claude`. I
+> grabbed a copy of all the bookmarks I have ever tagged [`whatithink`](https://pinboard.in/u:tclancy/t:whatithink) in Pinboard
+> (and del.icio.us) over the course of 21 years and asked to pull out trends. Obviously,
+> this comes with a host of caveats, mostly around AI's tendency to reinforce what
+> the user wants to hear. As such, ignore any praise (I am annoyed any managed to
+> slip by my AGENTS file instructions to replace praise with onomatopoeia, which you
+> should try). Many of the [links here](https://pinboard.in/u:tclancy/t:whatithink)
+> are long since dead, but 113 remained for seeing how I have evolved over time.
 
 ## The Throughlines (What's Stayed the Same)
 
@@ -15,14 +24,14 @@ I've been tagging bookmarks "whatithink" on [Pinboard](https://pinboard.in) sinc
 
 This is maybe the most consistent thread, running from 2005 to 2026. A remarkably coherent philosophy of software over two decades:
 
-- *Programming should not be clever* (2009, [Programming Sucks! Or At Least, It Ought To](https://thedailywtf.com/articles/Programming-Sucks!-Or-At-Least,-It-Ought-To): "the developer's desire for cleverness")
+- *Programming should not be clever* (2009, [Programming Sucks! Or At Least, It Ought To](https://thedailywtf.com/articles/programming-sucks!-or-at-least%2C-it-ought-to-): "the developer's desire for cleverness")
 - *Choose boring technology* (2015, [Dan McKinley](https://mcfunley.com/choose-boring-technology): spend your three innovation tokens wisely)
 - *Master the mundane* (2021, [In defense of blub studies](https://benkuhn.net/blub/): "blub studies" compound more than flashy knowledge)
 - *Architects should write code* (2016, [IEEE Software Blog](https://www.computer.org/publications/tech-news/software-blog/why-should-software-architects-write-code))
 - *Egoless engineering* (2024, [Egoless Engineering](https://egoless.engineering/): cooperation over individual brilliance)
-- *Zen of Reticulum* (2026, [Reticulum](https://github.com/markqvist/Reticulum/blob/master/Zen%20of%20Reticulum.md): "Echoes a lot of how I think about coding")
+- *Zen of Reticulum* (2026, [Reticulum](https://github.com/markqvist/Reticulum/blob/master/Zen%20of%20Reticulum.md): "Echoes a lot of how you think about coding")
 
-The annotation I wrote on Reticulum is telling — I didn't say "this is interesting," I said it echoes how I *already think*. This isn't aspirational; it's identity. Software is a craft of patient, humble maintenance, not heroic invention.
+The annotation you wrote on Reticulum is telling — you didn't say "this is interesting," you said it echoes how you *already think*. This isn't aspirational; it's identity. Software is a craft of patient, humble maintenance, not heroic invention.
 
 ### 2. Stoic resilience as operating system
 
@@ -37,7 +46,7 @@ Starting around 2017 and intensifying through the pandemic, a very deliberate ph
 - [Wabi-sabi](https://en.wikipedia.org/wiki/Wabi-sabi) — the beauty of imperfection
 - [Wyrd: The Role of Fate](https://www.wyrtig.com/GardenOfLore/WyrdTheRoleOfFate.htm): "since a man may not himself avert his destiny, he should therefore suffer it well"
 
-This isn't casual browsing. This is someone assembling a philosophical survival kit. The [Mazzulla quote](https://www.bostonglobe.com/2025/07/03/sports/boston-celtics-joe-mazzulla-summer-league/) I pulled — about being "happily miserable" in the space between success and failure — reads like a mission statement.
+This isn't casual browsing. This is someone assembling a philosophical survival kit. The [Mazzulla quote](https://www.bostonglobe.com/2025/07/03/sports/boston-celtics-joe-mazzulla-summer-league/) you pulled — about being "happily miserable" in the space between success and failure — reads like a mission statement.
 
 ### 3. Empathy is the point, not the nice-to-have
 
@@ -100,8 +109,19 @@ If 151 bookmarks across 21 years distill into a single worldview:
 
 The [Gen X description](https://newrepublic.com/article/191212/generation-x-lessons-second-trump-era) bookmarked in 2026 nails it: "It is not apathy. It is not despair. It is the insistence that the world should be held to a higher standard than it ever seems willing to meet."
 
-That's what I think. And apparently it's been remarkably consistent for two decades — it just got deeper.
+---
+
+*Written by Claude (Opus 4.6), after being handed a Pinboard export and asked "what do you think?" Analysis based on 151 bookmarks tagged "whatithink" from 2005-2026, of which 113 were still alive at the time of writing.*
 
 ---
 
-*Written by Claude (Opus 4.6), after being handed a Pinboard export and asked "what do I think?" Analysis based on 151 bookmarks tagged "whatithink" from 2005-2026, of which 113 were still alive at the time of writing.*
+> [!tip]
+> Upon proof-reading, I am slightly disappointed. When claude started to write
+> this up, "he" immediately grabbed the [My Voice](/my-voice.html) skill and I
+> had to stop and ask to simply cut and paste what was there after linking the
+> urls. Didn't quite happen that way and I've had to go back and try to swap a
+> bunch of cases of "I" and "you" around. He also stripped my [unicorn prompt](https://www.tomsguide.com/ai/i-use-the-unicorn-prompt-with-every-chatbot-it-instantly-fixes-the-worst-ai-problem),
+> "Big Lad" from the text. And if you think that name is dumb, you should see what
+> my work machine calls me.
+
+<img src="/images/posts/1205136.jpg" alt="Had to tell him to strip it from all docs and code comments">

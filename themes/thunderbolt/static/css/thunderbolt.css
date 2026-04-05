@@ -995,6 +995,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* ── Theme Toggle Button ───────────────────────────────────── */
 .theme-toggle {
+    display: none;
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.35);
     color: var(--cream);
