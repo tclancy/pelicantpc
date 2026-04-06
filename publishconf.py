@@ -2,10 +2,27 @@
 # explicitly specify it as your config file.
 
 import os
+import subprocess
 import sys
 
 sys.path.append(os.curdir)
 from pelicanconf import *  # noqa: F403
+
+# Cache busting: use the current git commit hash so browsers reload static
+# assets (CSS, JS) after every deploy. Falls back to a timestamp if git
+# is unavailable.
+try:
+    THEME_VERSION = (
+        subprocess.check_output(
+            ["git", "rev-parse", "--short", "HEAD"],
+            stderr=subprocess.DEVNULL,
+        )
+        .decode()
+        .strip()
+    )
+except Exception:
+    import time
+    THEME_VERSION = str(int(time.time()))
 
 # If your site is available via HTTPS, make sure SITEURL begins with https://
 # SITEURL = "https://tpcii.githubpages.io"
