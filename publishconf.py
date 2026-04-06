@@ -40,7 +40,10 @@ PLUGINS = [
     "pelican.plugins.deadlinks",
     "pelican.plugins.obsidian_callouts",
     "ornaments",
+    "css_compiler",
 ]
+
+CSS_MINIFY = True  # minify combined.css in production builds
 
 DELETE_OUTPUT_DIRECTORY = True
 
