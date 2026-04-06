@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}{{ article.title }} &mdash; {{ SITENAME }}{% endblock %}
+
+{% block extra_head %}
+    {% if article.description %}
+    <meta name="description" content="{{ article.description }}" />
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+<main class="main-content">
+    <div class="content-grid">
+        <div class="primary-column">
+            <article class="article-full">
+                <header class="article-header">
+                    <div class="article-meta">
+                        <time class="article-date" datetime="{{ article.date.isoformat() }}">
+                            {{ article.locale_date }}
+                        </time>
+                        <span class="article-category">
+                            <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
+                        </span>
+                    </div>
+                    <h1 class="article-title">{{ article.title }}</h1>
+                    {% if article.tags %}
+                    <div class="article-tags">
+                        {% for tag in article.tags %}
+                        <a href="{{ SITEURL }}/{{ tag.url }}" class="tag">{{ tag }}</a>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </header>
+
+                <div class="article-body">
+                    {{ article.content }}
+                </div>
+
+                <footer class="article-footer">
+                    <div class="article-nav">
+                        {% if article.prev_article %}
+                        <a href="{{ SITEURL }}/{{ article.prev_article.url }}" class="article-nav__prev">
+                            <span class="nav-label">&lsaquo; Older</span>
+                            <span class="nav-title">{{ article.prev_article.title }}</span>
+                        </a>
+                        {% endif %}
+                        {% if article.next_article %}
+                        <a href="{{ SITEURL }}/{{ article.next_article.url }}" class="article-nav__next">
+                            <span class="nav-label">Newer &rsaquo;</span>
+                            <span class="nav-title">{{ article.next_article.title }}</span>
+                        </a>
+                        {% endif %}
+                    </div>
+                </footer>
+            </article>
+        </div>
+
+        <aside class="sidebar">
+            {% include 'sidebar.html' %}
+        </aside>
+    </div>
+</main>
+{% endblock %}
