@@ -95,6 +95,8 @@ class TestCompileCssOutput:
         content = out.read_text()
         assert "a { color: blue; }" in content
         assert "b { color: red; }" in content
+        # Source order must be preserved: a.css before b.css
+        assert content.index("a { color: blue; }") < content.index("b { color: red; }")
 
     def test_respects_custom_css_output_path(self, tmp_path: Path):
         src = tmp_path / "src"

@@ -31,7 +31,7 @@ from pelican import signals
 def _read_source(path: str | Path) -> str:
     """Read one CSS source file, wrapping it in a comment banner."""
     p = Path(path)
-    with open(p) as f:
+    with open(p, encoding="utf-8") as f:
         content = f.read()
     banner = f"/* === {p.name} === */"
     return f"{banner}\n{content}"
