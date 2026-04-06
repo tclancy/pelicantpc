@@ -48,5 +48,12 @@ SOCIAL = (
 
 DEFAULT_PAGINATION = 10
 
+# Cache busting — appended as ?v=... to static asset URLs
+# Set to a git hash in publishconf.py for production; 'dev' for local builds
+THEME_VERSION = "dev"
+
+# Theme switcher is work-in-progress; hide until ready for production
+SHOW_THEME_SWITCHER = False
+
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
