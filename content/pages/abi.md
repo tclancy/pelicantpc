@@ -1,4 +1,4 @@
-Title: A Better Internet
+Title: ABI
 Slug: abi-a-better-internet
 Date: 2026-04-11 12:00:00
 Tags: abi internet
