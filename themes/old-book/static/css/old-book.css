@@ -84,13 +84,24 @@ body {
 }
 
 .ornament-top {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
   font-size: 0.8rem;
   color: var(--gold);
   letter-spacing: 0.5em;
-  margin-bottom: 0.5rem;
   text-transform: uppercase;
   font-family: 'Cinzel', serif;
+}
+
+.ornament-top::before,
+.ornament-top::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
 }
 
 .site-nav ul {
@@ -601,6 +612,145 @@ body {
   letter-spacing: 0.15em;
   color: var(--ink-faded);
   text-transform: uppercase;
+}
+
+/* ─── OBSIDIAN CALLOUTS ─── */
+.pelican-callout {
+    position: relative;
+    margin: 1.5rem 0;
+    border-radius: 3px;
+    border-left: 4px solid var(--co-border, #8c6b2a);
+    background: var(--co-bg, rgba(140, 107, 42, 0.08));
+    overflow: hidden;
+}
+
+.pelican-callout-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.55rem 1rem;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    color: var(--co-color, var(--ink-mid));
+    background: var(--co-title-bg, rgba(140, 107, 42, 0.12));
+    user-select: none;
+}
+
+.article-body .pelican-callout-icon {
+    flex-shrink: 0;
+    filter: var(--co-icon-filter, brightness(0) opacity(0.7));
+    opacity: 0.9;
+    border: none;
+}
+
+.pelican-callout-body {
+    padding: 0.75rem 1rem;
+    color: var(--ink);
+}
+
+.pelican-callout-body > *:last-child { margin-bottom: 0; }
+
+/* Foldable */
+.pelican-callout-foldable .pelican-callout-title { cursor: pointer; }
+
+.pelican-callout-foldable .pelican-callout-title::after {
+    content: '▾';
+    margin-left: auto;
+    font-size: 0.85em;
+    opacity: 0.6;
+}
+
+.pelican-callout-collapsed .pelican-callout-title::after { content: '▸'; }
+
+.pelican-callout-collapsed .pelican-callout-body { display: none; }
+
+/* ── Per-type colors (adapted for Old Book sepia/parchment palette) ───────── */
+
+/* note / info / todo — dark sepia/brown #8c6b2a (gold adjusted) */
+.pelican-callout-note,
+.pelican-callout-info,
+.pelican-callout-todo {
+    --co-color:       #8c6b2a;
+    --co-border:      #8c6b2a;
+    --co-bg:          rgba(140, 107, 42, 0.08);
+    --co-title-bg:    rgba(140, 107, 42, 0.12);
+    --co-icon-filter: brightness(0) saturate(100%) invert(45%) sepia(80%)
+                      saturate(600%) hue-rotate(30deg) brightness(100%);
+}
+
+/* abstract — warm brown #a35050 (accent-dim) */
+.pelican-callout-abstract {
+    --co-color:       #a35050;
+    --co-border:      #a35050;
+    --co-bg:          rgba(163, 80, 80, 0.08);
+    --co-title-bg:    rgba(163, 80, 80, 0.12);
+    --co-icon-filter: brightness(0) saturate(100%) invert(35%) sepia(80%)
+                      saturate(700%) hue-rotate(340deg) brightness(110%);
+}
+
+/* tip / important / question — accent/dark red #7a2828 */
+.pelican-callout-tip,
+.pelican-callout-important,
+.pelican-callout-question {
+    --co-color:       #7a2828;
+    --co-border:      #7a2828;
+    --co-bg:          rgba(122, 40, 40, 0.08);
+    --co-title-bg:    rgba(122, 40, 40, 0.12);
+    --co-icon-filter: brightness(0) saturate(100%) invert(25%) sepia(85%)
+                      saturate(800%) hue-rotate(340deg) brightness(105%);
+}
+
+/* success — darker sepia-green #6b5a44 (ink-faded with green tint) */
+.pelican-callout-success {
+    --co-color:       #6b5a44;
+    --co-border:      #6b5a44;
+    --co-bg:          rgba(107, 90, 68, 0.08);
+    --co-title-bg:    rgba(107, 90, 68, 0.12);
+    --co-icon-filter: brightness(0) saturate(100%) invert(50%) sepia(70%)
+                      saturate(400%) hue-rotate(60deg) brightness(95%);
+}
+
+/* warning / caution — darker gold #c2a87a (rule with darkened saturation) */
+.pelican-callout-warning,
+.pelican-callout-caution {
+    --co-color:       #c2a87a;
+    --co-border:      #c2a87a;
+    --co-bg:          rgba(194, 168, 122, 0.08);
+    --co-title-bg:    rgba(194, 168, 122, 0.12);
+    --co-icon-filter: brightness(0) saturate(100%) invert(68%) sepia(80%)
+                      saturate(500%) hue-rotate(30deg) brightness(105%);
+}
+
+/* failure / danger / bug — dark accent red #7a2828 */
+.pelican-callout-failure,
+.pelican-callout-danger,
+.pelican-callout-bug {
+    --co-color:       #7a2828;
+    --co-border:      #7a2828;
+    --co-bg:          rgba(122, 40, 40, 0.08);
+    --co-title-bg:    rgba(122, 40, 40, 0.12);
+    --co-icon-filter: brightness(0) saturate(100%) invert(25%) sepia(85%)
+                      saturate(800%) hue-rotate(340deg) brightness(105%);
+}
+
+/* example — deeper sepia/ink #3d2f1e (ink-mid) */
+.pelican-callout-example {
+    --co-color:       #3d2f1e;
+    --co-border:      #3d2f1e;
+    --co-bg:          rgba(61, 47, 30, 0.08);
+    --co-title-bg:    rgba(61, 47, 30, 0.12);
+    --co-icon-filter: brightness(0) opacity(0.8);
+}
+
+/* quote — faded ink #6b5a44 (ink-faded) */
+.pelican-callout-quote {
+    --co-color:       #6b5a44;
+    --co-border:      #6b5a44;
+    --co-bg:          rgba(107, 90, 68, 0.08);
+    --co-title-bg:    rgba(107, 90, 68, 0.12);
+    --co-icon-filter: brightness(0) opacity(0.6);
 }
 
 /* ─── RESPONSIVE ─── */
