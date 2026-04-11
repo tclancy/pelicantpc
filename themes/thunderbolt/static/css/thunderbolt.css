@@ -993,24 +993,3 @@ img { max-width: 100%; height: auto; display: block; }
     .archive-date { min-width: unset; }
 }
 
-/* ── Theme Toggle Button ───────────────────────────────────── */
-.theme-toggle {
-    display: none;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    color: var(--cream);
-    font-size: 1rem;
-    line-height: 1;
-    padding: 0.3rem 0.5rem;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.15s, border-color 0.15s;
-    margin-left: 0.5rem;
-    vertical-align: middle;
-    flex-shrink: 0;
-}
-.theme-toggle:hover {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 255, 255, 0.6);
-}
-
