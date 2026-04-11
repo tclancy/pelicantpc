@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-04-11
+
+- fix: Old Book theme issue #26 — restore ornament-top decorative lines (flexbox ::before/::after), fix duplicate article headers in list views (striptags + truncate in index/tag/category/author templates), add Obsidian callout CSS for all 15 callout types (sepia/parchment palette), add sub-header CSS (rule-ornament); 56 tests pass, 233 articles build clean (PR #27)
+
 ## 2026-04-04
 - Add CSS variable theme switcher (issues #18/#19): toggle button in thunderbolt nav switches between Thunderbolt & Lightfoot palette (default) and Old Book palette (parchment/ink/book fonts)
 - `[data-theme="old-book"]` override block in thunderbolt.css overrides all palette CSS variables + font families for key elements
