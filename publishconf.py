@@ -22,6 +22,7 @@ try:
     )
 except Exception:
     import time
+
     THEME_VERSION = str(int(time.time()))
 
 # If your site is available via HTTPS, make sure SITEURL begins with https://
