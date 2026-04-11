@@ -9,7 +9,7 @@ TIMEZONE = "America/New_York"
 DEFAULT_LANG = "en"
 TYPOGRIFY = True
 
-THEME = "themes/combined"
+THEME = "themes/thunderbolt"
 
 # fix paging navigation per - [Override templates](https://stackoverflow.com/a/61647660/7376)
 THEME_TEMPLATES_OVERRIDES = ["themes/overrides"]
@@ -22,18 +22,7 @@ PLUGINS = [
     "pelican.plugins.deadlinks",
     "pelican.plugins.obsidian_callouts",
     "ornaments",
-    "css_compiler",
 ]
-
-# CSS compiler — concatenates per-theme source files into a single output.
-# Edit these source files to change theme styles; combined.css is generated at build time.
-# To add a third theme: add its CSS path here and write [data-theme="name"] rules in that file.
-CSS_SOURCES = [
-    "themes/thunderbolt/static/css/thunderbolt.css",
-    "themes/old-book/static/css/old-book.css",
-]
-CSS_OUTPUT = "theme/css/combined.css"
-CSS_MINIFY = False  # set True in publishconf.py for production
 
 # deadlinks — check external links during build (DEADLINKS_VALIDATION enables full HTTP checks)
 DEADLINKS_VALIDATION = (
@@ -62,9 +51,6 @@ DEFAULT_PAGINATION = 10
 # Cache busting — appended as ?v=... to static asset URLs
 # Set to a git hash in publishconf.py for production; 'dev' for local builds
 THEME_VERSION = "dev"
-
-# Theme switcher is work-in-progress; hide until ready for production
-SHOW_THEME_SWITCHER = False
 
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
