@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}404 Not Found &mdash; {{ SITENAME }}{% endblock %}
+
+{% block content %}
+<main class="main-content">
+    <div class="content-grid">
+        <div class="primary-column">
+            <div class="error-page">
+                <div class="error-code">404</div>
+                <p class="error-message">This page has gone missing. Like the end of a good road movie.</p>
+                <a href="{{ SITEURL }}/" class="error-link">Back to the start</a>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

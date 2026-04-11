@@ -1,0 +1,32 @@
+{% extends "page.html" %}
+
+{% block content %}
+<main class="main-content">
+    <div class="content-grid">
+        <div class="primary-column">
+            <article class="article-full article-full--page">
+                <header class="article-header">
+                    <h1 class="article-title">{{ page.title }}</h1>
+                </header>
+                <div class="article-body">
+                    {{ page.content }}
+
+                    <h2>Posts</h2>
+                    <ul>
+                        {% for article in articles if article.tags and ('music' in article.tags|map(attribute='slug') or 'mtw' in article.tags|map(attribute='slug')) %}
+                        <li>
+                            <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+                            &mdash; {{ article.date.strftime('%B %-d, %Y') }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </article>
+        </div>
+
+        <aside class="sidebar">
+            {% include 'sidebar.html' %}
+        </aside>
+    </div>
+</main>
+{% endblock %}
