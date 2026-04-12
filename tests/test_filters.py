@@ -110,6 +110,19 @@ class TestCleanSummary:
         result = _clean_summary(html)
         assert '<a href="/foo">here</a>' in result
 
+    def test_void_element_inside_heading_does_not_break_depth(self):
+        # <img> has no closing tag; must not corrupt _skip_depth
+        html = '<h2>Section <img src="foo.jpg" alt="x"> heading</h2><p>Body</p>'
+        result = _clean_summary(html)
+        assert "<p>Body</p>" in result
+        assert "Section" not in result
+
+    def test_br_inside_heading_does_not_break_depth(self):
+        html = "<h1>Title<br>continued</h1><p>After.</p>"
+        result = _clean_summary(html)
+        assert "<p>After.</p>" in result
+        assert "Title" not in result
+
     def test_handles_none(self):
         assert _clean_summary(None) == ""
 

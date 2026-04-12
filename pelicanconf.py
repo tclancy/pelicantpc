@@ -2,6 +2,26 @@ import re
 from html.parser import HTMLParser
 
 
+_VOID_ELEMENTS = frozenset(
+    {
+        "area",
+        "base",
+        "br",
+        "col",
+        "embed",
+        "hr",
+        "img",
+        "input",
+        "link",
+        "meta",
+        "param",
+        "source",
+        "track",
+        "wbr",
+    }
+)
+
+
 class _SummaryCleaner(HTMLParser):
     """Strip headings (h1-h6) and pelican-callout blocks from summary HTML."""
 
@@ -14,7 +34,9 @@ class _SummaryCleaner(HTMLParser):
 
     def handle_starttag(self, tag, attrs):
         if self._skip_depth > 0:
-            self._skip_depth += 1
+            # Void elements have no closing tag so must not increment depth
+            if tag not in _VOID_ELEMENTS:
+                self._skip_depth += 1
             return
         attrs_dict = dict(attrs)
         classes = set(attrs_dict.get("class", "").split())
