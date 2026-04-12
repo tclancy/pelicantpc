@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-04-12
+
+- fix: Old Book theme — three remaining issues from Tom's feedback after PR #27 (issue #26)
+  - Removed `site-header::before/::after` pseudo-elements (4 lines → 2 lines in header)
+  - Article summaries now properly strip heading elements (h1-h6) and their text content using an HTML-parser-based Jinja2 filter `clean_summary`; also strips `pelican-callout` blocks that broke the summary display
+  - Article detail pages no longer show duplicate h1: new `strip_leading_h1` filter removes the first `<h1>` from article body content (all 207 posts start with `# Title` matching the metadata title)
+  - 20 new tests; 76 total passing (PR #28)
+
 ## 2026-04-11
 
 - fix: Old Book theme issue #26 — restore ornament-top decorative lines (flexbox ::before/::after), fix duplicate article headers in list views (striptags + truncate in index/tag/category/author templates), add Obsidian callout CSS for all 15 callout types (sepia/parchment palette), add sub-header CSS (rule-ornament); 56 tests pass, 233 articles build clean (PR #27)
