@@ -62,15 +62,6 @@ body {
   position: relative;
 }
 
-.site-header::before,
-.site-header::after {
-  content: '';
-  display: block;
-  height: 1px;
-  background: var(--rule);
-  margin: 0.6rem auto;
-  width: 50%;
-}
 
 .site-title a {
   font-family: 'Cinzel', serif;
