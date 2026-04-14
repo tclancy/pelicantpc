@@ -94,7 +94,7 @@ TIMEZONE = "America/New_York"
 DEFAULT_LANG = "en"
 TYPOGRIFY = True
 
-THEME = "themes/thunderbolt"
+THEME = "themes/old-book"
 
 # fix paging navigation per - [Override templates](https://stackoverflow.com/a/61647660/7376)
 THEME_TEMPLATES_OVERRIDES = ["themes/overrides"]

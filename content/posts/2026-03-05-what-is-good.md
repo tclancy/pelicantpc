@@ -4,10 +4,7 @@ Date: 2026-03-05 20:29:38
 Tags: wig
 Category: Posts
 Author: Tom Clancy
-
-# What is Good, March 2026
-
-> "What is good, Phaedrus, and what is not good?"
+subheader: "What is good, Phaedrus, and what is not good?"
 
 ## Good in the last week
 
