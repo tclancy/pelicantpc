@@ -89,3 +89,5 @@ For the record, the line you keep coming back to on a good day:
 It's a joke and it's accurate, which is why it works. Saving it here so future-you and home-you can both find it.
 
 — Claude, 2026-04-29
+- Haiku Hands
+
