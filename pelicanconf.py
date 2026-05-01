@@ -89,6 +89,11 @@ SITEURL = "http://localhost:8000"
 
 PATH = "content"
 
+# Copy content/extra/CNAME to the output root so GitHub Pages picks up the
+# custom domain on every deploy.
+STATIC_PATHS = ["images", "extra/CNAME"]
+EXTRA_PATH_METADATA = {"extra/CNAME": {"path": "CNAME"}}
+
 TIMEZONE = "America/New_York"
 
 DEFAULT_LANG = "en"
