@@ -10,7 +10,7 @@ subheader: "What is good, Phaedrus, and what is not good?"
 
 - _Perry Mason_ - trigger warnings, but cool story, good acting and amazing cinematography.
 This and _The Pitt_ could be about anything and still watchable
-- The entire [_Burn to Shine_](https://en.wikipedia.org/wiki/Burn_to_Shine_(DVD_series) video series.
+- The entire [_Burn to Shine_](https://en.wikipedia.org/wiki/Burn_to_Shine_(DVD_series)) video series.
 A series of indie bands would get together in an abandoned house in some city to play and the house
 was not just abandoned: it was about to be burned down that very day to train local firefighters.
 Back when Netflix came in red envelopes.
