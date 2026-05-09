@@ -1,6 +1,6 @@
 Title: What is Good? 2026-05-09
 Slug: wig-260509
-Date: 2026-05-09 17:00:00 AM
+Date: 2026-05-09 05:00:00 PM
 Tags: wig
 Category: Posts
 Author: Tom Clancy
