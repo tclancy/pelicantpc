@@ -12,8 +12,6 @@ dependencies = [
     "pelican-oembed",
     "pelican-simple-footnotes>=1.0.3",
     "pelican[markdown]>=4.11.0",
-    "pre-commit>=4.5.0",
-    "ruff>=0.14.8",
     "typogrify>=2.1.0",
 ]
 
@@ -24,5 +22,10 @@ pelican-oembed = { git = "https://github.com/tclancy/pelican-oembed.git" }
 
 [dependency-groups]
 dev = [
+    "pre-commit>=4.6.0",
     "pytest>=9.0.2",
+    "ruff>=0.15.13",
 ]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
