@@ -44,10 +44,10 @@
         <footer class="site-footer">
             <div class="footer-social">
                 {% for name, link in SOCIAL %}
-                <a href="{{ link }}">{{ name }}</a>
+                <a href="{{ link }}" rel="me">{{ name }}</a>
                 {% endfor %}
             </div>
-            <p class="footer-copy">&copy; {{ SITENAME }}</p>
+            <p class="footer-copy h-card">&copy; <a class="p-name u-url" href="{{ SITEURL }}/">{{ AUTHOR }}</a></p>
         </footer>
     </div>
 </body>
