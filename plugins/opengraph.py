@@ -32,6 +32,7 @@ from pelican import signals
 
 _IMG_SRC_RE = re.compile(r'<img[^>]+src=["\']([^"\']+)["\']', re.IGNORECASE)
 _TAG_RE = re.compile(r"<[^>]+>")
+_LEADING_H1_RE = re.compile(r"^\s*<h1[^>]*>.*?</h1>\s*", re.DOTALL | re.IGNORECASE)
 
 
 _MULTI_WS_RE = re.compile(r"\s+")
@@ -82,7 +83,8 @@ def _resolve_description(content) -> str:
 
     raw = getattr(content, "_content", None)
     if raw:
-        return _truncate(_strip_tags(raw))
+        cleaned = _LEADING_H1_RE.sub("", raw, count=1)
+        return _truncate(_strip_tags(cleaned))
 
     return ""
 

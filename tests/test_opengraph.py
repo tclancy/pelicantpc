@@ -119,6 +119,7 @@ class TestBasicOGTags:
         c = _make_content(og_type="profile")
         opengraph.process_content(c)
         assert c.opengraph["type"] == "profile"
+        assert "article_published_time" not in c.opengraph
 
     def test_url_absolute(self):
         c = _make_content(url="posts/hello.html")
@@ -178,6 +179,11 @@ class TestDescription:
         c = _make_content(description="Tom &amp; Jerry&#39;s place")
         opengraph.process_content(c)
         assert c.opengraph["description"] == "Tom & Jerry's place"
+
+    def test_strips_leading_h1_from_content_fallback(self):
+        c = _make_content(html="<h1>My Title</h1><p>Actual body text here.</p>")
+        opengraph.process_content(c)
+        assert c.opengraph["description"] == "Actual body text here."
 
     def test_empty_when_nothing_available(self):
         c = _make_content(html="")
