@@ -63,10 +63,8 @@ class TestRelMe:
     def test_github_has_rel_me(self, theme):
         env = _make_env(theme)
         html = env.get_template("base.html").render(**MOCK_CONTEXT)
-        assert (
-            'href="https://github.com/tclancy" rel="me"' in html
-            or 'href="https://github.com/tclancy"' in html
-            and 'rel="me"' in html
+        assert 'href="https://github.com/tclancy" rel="me"' in html or (
+            'href="https://github.com/tclancy"' in html and 'rel="me"' in html
         )
 
     def test_bluesky_has_rel_me(self, theme):

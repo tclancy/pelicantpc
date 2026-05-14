@@ -24,12 +24,8 @@ pelican-oembed = { git = "https://github.com/tclancy/pelican-oembed.git" }
 dev = [
     "pre-commit>=4.6.0",
     "pytest>=9.0.2",
-    "radon>=6.0.1",
     "ruff>=0.15.13",
 ]
-
-[tool.radon]
-cc_min = "B"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
