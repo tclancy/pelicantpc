@@ -1,0 +1,65 @@
+{# OpenGraph + Twitter Card meta tags — shared across all themes.
+   Rendered by {% include '_opengraph.html' %} in base.html.
+   Data comes from plugins/opengraph.py (attached as content.opengraph).
+   Pelican does not enable Jinja2 autoescape — use |e on all attribute values. #}
+{% if article is defined and article.opengraph is defined %}
+    {% set og = article.opengraph %}
+{% elif page is defined and page.opengraph is defined %}
+    {% set og = page.opengraph %}
+{% else %}
+    {% set og = none %}
+{% endif %}
+{% if og %}
+    <meta property="og:title" content="{{ og.title|e }}" />
+    <meta property="og:type" content="{{ og.type|e }}" />
+    <meta property="og:url" content="{{ og.url|e }}" />
+    {% if og.description %}
+    <meta property="og:description" content="{{ og.description|e }}" />
+    {% endif %}
+    {% if og.image %}
+    <meta property="og:image" content="{{ og.image|e }}" />
+    {% endif %}
+    <meta property="og:site_name" content="{{ og.site_name|e }}" />
+    {% if og.article_published_time is defined %}
+    <meta property="article:published_time" content="{{ og.article_published_time|e }}" />
+    {% endif %}
+    {% if og.article_modified_time is defined %}
+    <meta property="article:modified_time" content="{{ og.article_modified_time|e }}" />
+    {% endif %}
+    {% if og.article_author is defined %}
+    <meta property="article:author" content="{{ og.article_author|e }}" />
+    {% endif %}
+    {% if og.article_tags is defined %}
+    {% for tag in og.article_tags %}
+    <meta property="article:tag" content="{{ tag|e }}" />
+    {% endfor %}
+    {% endif %}
+    <meta name="twitter:card" content="{{ og.twitter_card|e }}" />
+    <meta name="twitter:title" content="{{ og.title|e }}" />
+    {% if og.description %}
+    <meta name="twitter:description" content="{{ og.description|e }}" />
+    {% endif %}
+    {% if og.image %}
+    <meta name="twitter:image" content="{{ og.image|e }}" />
+    {% endif %}
+    {% if og.twitter_site is defined %}
+    <meta name="twitter:site" content="{{ og.twitter_site|e }}" />
+    {% endif %}
+{% else %}
+    {# Site-level fallback for index / category / tag pages #}
+    <meta property="og:title" content="{{ SITENAME|e }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ SITEURL|e }}/" />
+    <meta property="og:site_name" content="{{ SITENAME|e }}" />
+    {% if OG_DEFAULT_IMAGE is defined and OG_DEFAULT_IMAGE %}
+    <meta property="og:image" content="{{ SITEURL|e }}/{{ OG_DEFAULT_IMAGE|e }}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="{{ SITEURL|e }}/{{ OG_DEFAULT_IMAGE|e }}" />
+    {% else %}
+    <meta name="twitter:card" content="summary" />
+    {% endif %}
+    <meta name="twitter:title" content="{{ SITENAME|e }}" />
+    {% if OG_TWITTER_USERNAME is defined and OG_TWITTER_USERNAME %}
+    <meta name="twitter:site" content="{{ OG_TWITTER_USERNAME|e }}" />
+    {% endif %}
+{% endif %}
