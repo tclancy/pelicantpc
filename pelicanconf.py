@@ -112,6 +112,7 @@ PLUGINS = [
     "pelican.plugins.deadlinks",
     "pelican.plugins.obsidian_callouts",
     "ornaments",
+    "opengraph",
 ]
 
 # deadlinks — check external links during build (DEADLINKS_VALIDATION enables full HTTP checks)

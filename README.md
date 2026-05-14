@@ -70,6 +70,7 @@ All active plugins are listed in `pelicanconf.py` under `PLUGINS`.
 | `plugins.oembed` | local (`plugins/oembed.py`) | Embeds YouTube, Twitter/X, and other oEmbed providers |
 | `pelican.plugins.simple_footnotes` | PyPI `pelican-simple-footnotes` | Footnote syntax: `[^1: text]` renders inline footnotes |
 | `pelican.plugins.deadlinks` | GitHub (no PyPI release) | Detects broken external links; set `DEADLINKS_VALIDATION = True` for full HTTP checks |
+| `opengraph` | local (`plugins/opengraph.py`) | OpenGraph + Twitter Card meta tags for social sharing |
 
 ### Installing the deadlinks plugin
 
@@ -78,6 +79,26 @@ Because `pelican-deadlinks` has no PyPI release, it must be installed from GitHu
 ```bash
 uv add "git+https://github.com/pelican-plugins/deadlinks.git"
 ```
+
+### OpenGraph configuration
+
+The `opengraph` plugin adds `og:` and `twitter:` meta tags to every page automatically. No configuration is required for basic usage.
+
+Optional front-matter fields (all override the auto-detected values):
+
+| Field | Purpose |
+|-------|---------|
+| `og_title` | Social-sharing title (defaults to article title) |
+| `og_description` | Social-sharing blurb (defaults to `description`, then truncated summary) |
+| `og_image` | Social-sharing image URL (defaults to first `<img>` in content) |
+| `og_type` | OG type (defaults to `article` for posts, `website` for pages) |
+
+Optional `pelicanconf.py` settings:
+
+| Setting | Purpose |
+|---------|---------|
+| `OG_DEFAULT_IMAGE` | Fallback image when no article image exists |
+| `OG_TWITTER_USERNAME` | Twitter/X handle for `twitter:site` tag |
 
 ### Running a link audit
 

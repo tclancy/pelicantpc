@@ -41,6 +41,7 @@ PLUGINS = [
     "pelican.plugins.deadlinks",
     "pelican.plugins.obsidian_callouts",
     "ornaments",
+    "opengraph",
 ]
 
 DELETE_OUTPUT_DIRECTORY = True
