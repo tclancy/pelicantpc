@@ -12,17 +12,17 @@
 <main class="main-content">
     <div class="content-grid">
         <div class="primary-column">
-            <article class="article-full">
+            <article class="article-full h-entry">
                 <header class="article-header">
                     <div class="article-meta">
-                        <time class="article-date" datetime="{{ article.date.isoformat() }}">
+                        <time class="article-date dt-published" datetime="{{ article.date.isoformat() }}">
                             {{ article.locale_date }}
                         </time>
                         <span class="article-category">
                             <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
                         </span>
                     </div>
-                    <h1 class="article-title">{{ article.title }}</h1>
+                    <h1 class="article-title p-name">{{ article.title }}</h1>
                     {% if article.tags %}
                     <div class="article-tags">
                         {% for tag in article.tags %}
@@ -32,9 +32,13 @@
                     {% endif %}
                 </header>
 
-                <div class="article-body">
+                <div class="article-body e-content">
                     {{ article.content }}
                 </div>
+                <a class="u-url" href="{{ SITEURL }}/{{ article.url }}" hidden></a>
+                <span class="p-author h-card" hidden>
+                    <a class="p-name u-url" href="{{ SITEURL }}/">{{ AUTHOR }}</a>
+                </span>
 
                 <footer class="article-footer">
                     <div class="article-nav">

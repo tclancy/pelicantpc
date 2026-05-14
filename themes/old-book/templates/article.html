@@ -9,18 +9,22 @@
 {% endblock %}
 
 {% block content %}
-<article>
+<article class="h-entry">
     <header class="article-header">
         <span class="article-chapter-label">{{ article.category }}</span>
-        <h1 class="article-title">{{ article.title }}</h1>
-        <time class="article-date" datetime="{{ article.date.isoformat() }}">
+        <h1 class="article-title p-name">{{ article.title }}</h1>
+        <time class="article-date dt-published" datetime="{{ article.date.isoformat() }}">
             {{ article.date.strftime('%B %Y') }}
         </time>
     </header>
 
-    <div class="article-body">
+    <div class="article-body e-content">
         {{ article.content | strip_leading_h1 }}
     </div>
+    <a class="u-url" href="{{ SITEURL }}/{{ article.url }}" hidden></a>
+    <span class="p-author h-card" hidden>
+        <a class="p-name u-url" href="{{ SITEURL }}/">{{ AUTHOR }}</a>
+    </span>
 
     {% if article.tags %}
     <div class="article-tags">
