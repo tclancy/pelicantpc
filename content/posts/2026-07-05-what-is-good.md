@@ -8,7 +8,7 @@ subheader: "What is good, Phaedrus, and what is not good?"
 
 ## Good in the last month
 
-![Public Hapiness Triumps Over Danger](/images/posts/public-hapiness.jpg)
+![Public Hapiness Triumps Over Danger](/images/posts/public-hapiness.jpeg)
 
 - _Good Luck, Have Fun, Don't Die_ - terrific science fiction, only downside was it
 left me annoyed with everyone who had their face in their phone for a while after.
