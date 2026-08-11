@@ -31,6 +31,6 @@ hot in early August but the beach looking out at the lake sitting in front of a 
 of White Mountains is a "Wish You Were Here!" postcard type of view. And it's just a
 damned friendly place.
 - _Exile on Main Street_: not exactly news but what is called the [Deluxe Version on Spotify](https://open.spotify.com/album/1D0PTM0bg7skufClSUOxTP?si=CQR0ClfRTPy7lZWeFEJt2g) has a whole second album of
-songs that didn't make the cut and they are fantastic. Like some of the songs describe other,
-famous, band's whole oeuvre.
+songs that didn't make the cut and they are fantastic. Like some of the songs contain other,
+famous, bands' whole oeuvre.
 https://www.youtube.com/watch?v=hJx4xwjTb6M
