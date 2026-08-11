@@ -1,4 +1,4 @@
-Title: What is Good? 2026-06-05
+Title: What is Good? 2026-07-05
 Slug: wig-2600705
 Date: 2026-06-05 05:00:00 PM
 Tags: wig
