@@ -98,6 +98,9 @@ TIMEZONE = "America/New_York"
 
 DEFAULT_LANG = "en"
 TYPOGRIFY = True
+# The `caps` filter wraps acronyms in <span class="caps">, which no theme styles
+# and which leaks as literal markup into the <title> tag. Skip it.
+TYPOGRIFY_OMIT_FILTERS = ["caps"]
 
 THEME = "themes/old-book"
 
