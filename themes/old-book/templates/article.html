@@ -10,7 +10,7 @@
 
 {% block content %}
 <article class="h-entry">
-    <header class="article-header">
+    <header class="article-header{% if article.subheader %} article-header--ornamented{% endif %}">
         <span class="article-chapter-label">{{ article.category }}</span>
         <h1 class="article-title p-name">{{ article.title }}</h1>
         <time class="article-date dt-published" datetime="{{ article.date.isoformat() }}">

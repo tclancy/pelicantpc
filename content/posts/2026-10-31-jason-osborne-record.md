@@ -4,6 +4,7 @@ Date: 2026-10-31 10:30:00 PM
 Tags: nh, politics
 Category: Posts
 Author: Tom Clancy
+Status: draft
 subheader: What he has done in office, and what has been reported about him. Every line has a link.
 
 Jason Osborne is the Majority Leader of the New Hampshire House and is running
